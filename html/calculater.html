@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #calculater {
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 5px;
+            width: 250px;
+            height: 390px;
+            margin: 10px;
+            background-color: rgb(73, 72, 72);
+        }
+
+        .display {
+            height: 30px;
+            border: 3px solid black;
+            margin: 20px 35px;
+        }
+
+        button {
+            height: 46px;
+            width: 46px;
+            margin: 3px;
+        }
+
+        #buttons {
+            border: 2px solid black;
+            height: 280px;
+            width: 220px;
+            margin: 0px 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculater">
+        <input class="display">
+
+        <div id="buttons">
+            <button onclick="
+                display_content='';document.querySelector('input').value=display_content;
+
+            ">C</button>
+            <button onclick="
+                display_content=display_content+ '+';document.querySelector('input').value=display_content;
+
+            ">+</button>
+            <button onclick="
+                display_content=display_content+'-';document.querySelector('input').value=display_content;
+
+            ">-</button>
+            <button onclick="
+                 display_content=display_content+'/';document.querySelector('input').value=display_content;
+
+            ">/</button>
+ 
+ 
+            <button onclick="
+                display_content=display_content+1;document.querySelector('input').value=display_content;
+                ">1</button>
+            <button onclick="
+                display_content=display_content+2;document.querySelector('input').value=display_content;
+
+            ">2</button>
+            
+            <button onclick="
+                display_content=display_content+3;document.querySelector('input').value=display_content;
+
+            ">3</button>
+            <button onclick="
+            display_content=display_content+'*';document.querySelector('input').value=display_content;
+       
+        ">*</button>
+            <button onclick="
+                display_content=display_content+4;document.querySelector('input').value=display_content;
+
+            ">4</button>
+            <button onclick="
+                display_content=display_content+5;document.querySelector('input').value=display_content;
+
+             ">5</button>
+            <button onclick="
+                display_content=display_content+6;document.querySelector('input').value=display_content;
+
+            ">6</button>
+            <button onclick="
+            display_content=display_content+0;document.querySelector('input').value=display_content;
+   
+        ">0</button>
+            <button onclick="
+                display_content=display_content+7;document.querySelector('input').value=display_content;
+
+            ">7</button>
+            <button onclick="
+                display_content=display_content+8;document.querySelector('input').value=display_content;
+
+            ">8</button>
+            <button onclick="
+                display_content=display_content+9;document.querySelector('input').value=display_content;
+
+            ">9</button>
+            
+            
+            <button onclick="
+            let ans=eval(display_content);
+            display_content=ans    ;document.querySelector('input').value=display_content;
+            ">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display_content = '';
+        document.querySelector('input').value = display_content;
+    </script>
+
+</body>
+
+</html>

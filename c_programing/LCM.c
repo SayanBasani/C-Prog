@@ -28,8 +28,6 @@ int main()
                 {
                     if (i==j)
                     {
-                        // printf("%d    ",j);
-                        // printf("%d    ",i);
                         e=i;
                     }
                     
