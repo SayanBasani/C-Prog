@@ -74,12 +74,29 @@ you have to print :-
 9  16
 25  36.... 
 '''
-num={}
-for i in range(0,100,2):
-    # print(i)
-    num[(i**2)]=((i+1)**2)
-b=num.items()
+# num={}
+# nn=int(input("enter your end number : "))
+# for i in range(1,nn,2):
+#     # print(i)
+#     num[(i**2)]=((i+1)**2)
+# b=num.items()
 
-for k,l in num.items():
-    print (f'{k}     {l}')
-#     print(num)
+# for k,l in num.items():
+#     print (f'{k} --->> {l}')
+# # print('00000')
+'''   Anish solution '''
+# name={}
+# a=0
+# n=int(input("enter your end number : "))
+# for i in range(1,n):
+#     if i%2==0:
+#         a=i**2
+#     else:
+#         b=i**2
+#     if a > b:
+#         name[b]=a
+#     else:
+#         name[b]=a
+        
+# for i, j in name.items():
+#     print(f"{i} --->> {j}")
