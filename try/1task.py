@@ -156,6 +156,120 @@ Expected output:
 # # {'name': 'Kelly', 'age': 25, 'salary': 8000, 'location': 'New york'}
 
 
-import requests
-x=requests.get("https://www.google.com")
-print(x.text)
+# import requests
+# x=requests.get("https://www.google.com")
+# print(x.text)
+
+'''
+sample_dict = {
+"name": "Kelly",
+"age":25,
+"salary": 8000,
+"city": "New york"
+}
+Expected output:
+{'name': 'Kelly', 'age': 25, 'salary': 8000, 'location': 'New york'}
+'''
+
+# sample_dict = {
+# "name": "Kelly",
+# "age":25,
+# "salary": 8000,
+# "city": "New york"
+# }
+# item=input("which iteme you want to remove :- ")
+# it=sample_dict[item]
+# sample_dict.pop(item)
+# item_name=input("enter new name :- ")
+# sample_dict.update({item_name:it})
+# print(sample_dict)
+
+
+
+'''
+# Get the key of a minimum value from the following dictionary
+sample_dict = {
+'Physics': 82,
+'Math': 65,
+'history': 75
+}
+Expected output:
+Math
+'''
+sample_dict = {
+'Physics': 82,
+'Math': 65,
+'history': 75
+}
+
+'''Answer 1'''
+# def low(a,b):
+#     if(a>b):
+#         return b
+#     else:
+#         return a
+# e1=1000
+# k=''
+# for i,j in sample_dict.items():
+#     e1=low(j,e1)
+#     if(e1==j):
+#         k=i
+# print(k)
+'''answer 2'''
+# x=1000
+# for i,j in sample_dict.items():
+#     x=min(x,j)
+# print(x)
+
+
+'''
+Change value of a key in a nested dictionary
+change Brad's salary to 8500 in the following dictionary.
+Given:
+sample_dict = {
+'emp1': {'name': 'Jhon', 'salary': 7500}, 'emp2': {'name': 'Emma', 'salary': 8000}, 'emp3': {'name': 'Brad', 'salary': 500}
+}
+Expected output:
+{
+'emp1': {'name': 'Jhon', 'salary': 7500}, 'emp2': {'name': 'Emma', 'salary': 8000}, 'emp3': {'name': 'Brad', 'salary': 8500}
+}
+ '''
+# sample_dict = {
+#     'emp1': {'name': 'Jhon', 'salary': 7500}, 
+#     'emp2': {'name': 'Emma', 'salary': 8000}, 
+#     'emp3': {'name': 'Brad', 'salary': 500}
+#     }
+# sample_dict['emp3']['salary']=sample_dict['emp3']['salary']+sample_dict['emp2']['salary']
+# print(sample_dict['emp3']['salary'])
+# # print(x)
+
+'''
+###Convert two lists into a dictionary###
+Below are the two lists. Write a Python program to convert them into a dictionary in a way that item from list1 is the key and item from list2 is the value
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+Expected output:
+{'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+'''
+# keys = ['Ten', 'Twenty', 'Thirty']
+# values = [10, 20, 30]
+
+# New_Dict={}
+# for i in range(0,len(keys)-1):
+#     New_Dict[keys[i]]= values[i]
+# print(New_Dict)
+    
+    
+    
+'''
+Merge two Python dictionaries into one
+dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+Expected output:
+{'Ten': 10, 'Twenty': 20, 'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+'''
+# dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+# dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+# for i,j in dict2.items():
+#     dict1[i]=j
+# print(dict1)
