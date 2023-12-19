@@ -7,37 +7,17 @@
 # for i,a  in x.items ():
 #     print(f'{i}:{a}')
     
-    
-x1={}
-n=int(input("enter number :- "))
-for i  in range(0,n):
-    a=input("Enter name :- ")
-    b=int(input("Enter get num :- "))
-    x1[a]={b}
-print(x1)    
-
-# # for i,j in x.items():
-# #     print(i,"=",j)
+'''make a dictionery'''
+# x1={}
+# n=int(input("enter number :- "))
+# for i  in range(0,n):
+#     a=input("Enter name :- ")
+#     b=int(input("Enter get num :- "))
+#     x1[a]={b}
+# print(x1)    
 
 
-# print(x.items())
-
-
-
-
-# shop={'1st':'chocklet','2nd':'books','3rd':100,'quality':'good','4th':{
-#     'owner':'sayan','age':19,'sex':'male'
-# }}
-# print(shop['2nd'])
-# # x=shop.items()
-# # print(x)
-# for i,a in shop.items():
-#     print(f"{i}:{a}")
-# # shop.append('sayan')
-# print(shop)
-
-
-# '''   print the histry value from the discenary  '''
+'''   print the histry value from the discenary  '''
 # sampleDict = {
 #     "class": {
 #         "student": {
@@ -49,6 +29,29 @@ print(x1)
 #         }
 #     }
 # }
-
 # value=sampleDict['class']['student']['marks']['history']
 # print(value)
+
+''' if any key have to be delete '''
+# sample_dict = {
+#     "name": "Kelly",
+#     "age": 25,
+#     "salary": 8000,
+#     "city": "New york"
+# }
+
+# # Keys to remove
+# keys = ["name", "salary"]
+
+# for k in keys:
+#     sample_dict.pop(k) 
+# print(sample_dict)
+
+s = {
+    "name": "sayan basani ",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"
+}
+a=s['name']
+print(a[1:3])
