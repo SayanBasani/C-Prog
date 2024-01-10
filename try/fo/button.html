@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <style>
+        body{
+            background-image: linear-gradient(rgb(81, 40, 40),rgb(94, 94, 142));
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <center>
+            <div>
+                <p>button for smart switch</p>
+                <input type="submit" value="on">
+                <input type="checkbox" onclick="onoff()" name="onoff" id="onoff">
+            </div>
+        </center>
+    </div>
+    <script>
+        function onoff() {
+            location.reload()
+        }
+    </script>
+</body>
+</html>

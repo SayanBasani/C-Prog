@@ -3,6 +3,7 @@ from django.urls import path,include
 from sayanst import views
 
 urlpatterns = [
-    path("",views.index,name='Home'),
-    path("about",views.about,name='about'),
+    # path("",views.index,name='Home'),
+    # path("about/",views.about),
+    path('page/',views.page),
 ]

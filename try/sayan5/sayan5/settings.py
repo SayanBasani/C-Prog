@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+FIREBASE_ORM_CERTIFICATE = 'path/to/serviceAccountKey.json'
+FIREBASE_ORM_BUCKET_NAME = '<BUCKET_NAME>.appspot.com'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'sayan5.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templet',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

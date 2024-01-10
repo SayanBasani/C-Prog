@@ -10,3 +10,5 @@ def game(request):
     return render(request,'game.html')
 def fom(request):
     return render(request,'from.html')
+# def test(request):
+    
