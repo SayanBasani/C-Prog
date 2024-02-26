@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Items on Hover</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.hidden-items {
+  display: none;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+}
+.container:hover .hidden-items {
+  display: block;
+}
+
+
+.con:hover .con-hidden{
+    display: block;
+}
+.con-hidden{
+    display: none;
+}
+</style>
+</head>
+<body>
+<div class="con">
+    <p>sayan2</p>
+    <div class="con-hidden">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</div>
+
+<hr>
+
+
+<div class="container">
+    <p>sayan</p>
+    <div class="hidden-items">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

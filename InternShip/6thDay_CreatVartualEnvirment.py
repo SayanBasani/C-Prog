@@ -8,7 +8,7 @@ step 1 :- open this folder where you want to creat the vartual envirment
 step 2 :- then open this file on the terminal  
 step 3 :- then run "py -m venv Name_Vartual_Envirment
 step 4 :- then "cd Name_Vartual_Envirment"
-step 5 :- run " Script\activates"
+step 5 :- run " Scripts\activate"
 '''
 
 
