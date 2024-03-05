@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.seller_product_form{
+    min-height: 500px;
+    border: 2px solid black;
+}
+.seller_product_form-img{
+    width: 50px;
+    height: 50px;
+}

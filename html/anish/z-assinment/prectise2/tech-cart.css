@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    
+}
+body{
+    background-color: rgb(19, 187, 193);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+.cart{
+    /* border: 3px dotted black; */
+    height: 300px;
+    width: auto;
+    display: flex;
+}
+.items_img,.items{
+    height:350px;
+    width: 350px;
+}
+#head{
+    font-size: 23px;
+}
+#info{
+
+    background-color: rgba(154, 5, 119, 0.97);
+}
+.items_text{
+    padding: 20px;
+    font-size: 22px;
+}
+#intro{
+    font-size: 17px;
+}
+.items_text{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+}
+#analise{
+    display: flex;
+    /* border: 2px solid white; */
+}
+.ana{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 2px solid blueviolet; */
+    width: 80px;
+    height: 80px;
+}
+.k{
+    font: bold 27px/1 sans-serif;
+    font-family: "Abril Fatface", serif;
+}
+.anaa{
+    /* border: 2px solid ; */
+    /* padding-left: 25px; */
+    /* padding-right: px; */
+}
+#com{
+    font-size: 13px;
+}

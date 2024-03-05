@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try home 2</title>
+    <link rel="stylesheet" href="Try_home2.css">     
+</head>
+<body>
+    <!-- ---------------main nav -------------------- -->
+    <header class="nav1">
+        <div class="sidenav nav1_item" id="sidenav">
+            <a href="javascript:void(0)" class="closebutton" onclick="closenav()">&times;</a>
+            <h2>Hey! Sayan</h2>
+            <div class="sidenav-main_4">
+                <div class="sidenav-main_options">
+                    <a href="" class="sidenav-i_options sidenav-options-order">Order</a>
+                    <a href="" class="sidenav-i_options sidenav-options-wish">Wishlist</a>
+                    <a href="" class="sidenav-i_options sidenav-options-coupo">Coupons</a>
+                    <a href="" class="sidenav-i_options sidenav-options-help">Help Center</a>
+                </div>
+            </div>
+            <div class="sidenav_spacings"></div>
+            <h2>Account Settings</h2>
+            <a href="" class="sidenav_option">Edit Profile</a>
+            <a href="" class="sidenav_option">Saved Address</a>
+            <div class="sidenav_spacings"></div>
+            <h2>My Actity</h2>
+            <a href="" class="sidenav_option">Reviews</a>
+            <a href="" class="sidenav_option">Questions & Answers</a>
+            <div class="sidenav_spacings"></div>
+            <h2>Earn with Sells</h2>
+            <a href="" class="sidenav_option">Sells Creator Studio</a>
+            <a href="" class="sidenav_option">My Sells</a>
+            <div class="sidenav_spacings"></div>
+            <h2>Feedback & Information</h2>
+            <a href="" class="sidenav_option">Browse FAQs</a>
+            <a href="" class="sidenav_option">Terms, Policies and Licences</a>
+            <a href="" class="sidenav_option sidenav-log_out">Log Out</a>
+        </div>
+        <span onclick="opennav()" class="nav1_item"id="nav1_1">&#9776;</span>
+        <div class="nav1_item" id="nav1_2"><a href="">Home</a></div>
+        <div class="nav1_item" id="nav1_3"><input type="text" class="nav1_search" placeholder="   Search"></div>
+        <div class="nav1_item" id="nav1_4"><a href="" class="nav1_login">Login/Signup</a></div>
+    </header>
+    <!-- ---------------second nav -------------------- -->
+    <div class="nav2">
+        <div class="nav2_item" id="nav2_2"><button class="nav2_button" id="">Catagory</button></div>
+        <div class="nav2_item" id="nav2_3"><button class="nav2_button" id="">Populer</button></div>
+        <div class="nav2_item" id="nav2_1"><button class="nav2_button" id="">Best Sellers</button></div>
+        <div class="nav2_item" id="nav2_4"><button class="nav2_button" id="">Computer</button></div>
+        <div class="nav2_item" id="nav2_5"><button class="nav2_button" id="">Electronics</button></div>
+        <div class="nav2_item" id="nav2_6"><button class="nav2_button" id="">Gift Ideas</button></div>
+    </div>
+</body>
+<script>
+    function closenav() {
+        document.getElementById("sidenav").style.width="0";
+    }
+    function opennav(){
+        document.getElementById('sidenav').style.width="250px";
+    }
+</script>
+</html>

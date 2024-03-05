@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Flax Box</title>
+    <style>
+        .cont{
+            background-color: antiquewhite;
+            border: 4px solid black;
+            display: flex;
+            height: 500px;
+    /* ------------------ use for arrange in a column or row--------------  */
+            /* flex-direction: column; */
+    /* ------------------ to arrange them in small place use this--------------*/
+            /* flex-wrap: wrap; */
+    /* ------------- to set position of this contients  & manage space between element----------------- */
+            /* justify-content: center; */
+            justify-content: space-around;
+    /* ------------------ use to place items coresponding cros axis --------------*/
+    /* align-items: center; */
+    /* ------------------ use to handel items space after wraping --------------*/
+            /* align-content: start; */
+
+        }
+
+        .box{
+            height: 90px;
+            width: 90px;
+            border: 2px solid black;
+            margin: 2px;
+            padding: 2px;
+        }
+        #box1{
+            background-color: aqua;
+    /* ------------- use to change or manage order --------------- */
+            order: 12;
+    /* -------------- use to manage space(fill space) and during wrap manage it's speed */
+            /* flex-shrink: 5; */
+            /* flex-grow: 5; */
+    /* --------------- use to set width ------------------- */
+            /* flex-basis: 130px; */
+    /* ---------------- it is use to manage flex items----------- */
+            /* align-self: end; */
+
+        }
+        #box2{
+            background: red;
+        }
+        #box3{
+            background:rgb(78, 7, 117);
+        }
+        #box4{
+            background: yellow;
+            order: -1;
+            /* align-self: end; */
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="box" id="box1">box1</div>
+        <div class="box" id="box2">box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+    </div>
+</body>
+</html>
