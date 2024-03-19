@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperSeaser</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            padding-top: 60px;
+        }
+        .button_images{
+            margin-top: 70px;
+            margin-inline-start: 30px;
+            border-radius: 100%;
+            border: 2px solid;
+            font-size: 130px;
+            cursor: pointer;
+        }
+        .button_images:hover{
+            filter: blur(1.5px);
+            border: 5px solid blueviolet;
+        }
+        body{
+            display: flex;
+            flex-wrap: nowrap;
+            text-align: center;
+            justify-content: center;
+        }
+        .content{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+        .Restart{
+            margin-top: 50px;
+            font-size: 40px;
+            border: hidden;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>RockPaperSeaser</h1>
+        <div class="content">
+            <button class="button_images">✊</button>
+            <button class="button_images">✌️</button>
+            <button class="button_images">🫱</button>
+        </div>
+        <button class="Restart">Restart Game</button>
+    </div>
+    <script src="R_p_s.js"></script>
+</body>
+</html>
