@@ -12,7 +12,7 @@ firebaseConfig = {
   'appId': "1:620595830414:web:9456fb464b28906f7d73df",
   'measurementId': "G-XQFMT37DGZ",
   'databaseURL':" ",
-}
+};
 service={
   "type": "service_account",
   "project_id": "e-commers-web-page",
@@ -26,32 +26,6 @@ service={
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1uno3%40e-commers-web-page.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
-{
-    # firebaseConfig = {
-    #   'apiKey': "AIzaSyB8YHcXlJjvb10CKHrF91M0VZB6SYxEb8o",
-    #   'authDomain': "ecom-56940.firebaseapp.com",
-    #   'projectId': "ecom-56940",
-    #   'storageBucket': "ecom-56940.appspot.com",
-    #   'messagingSenderId': "905707331861",
-    #   'appId': "1:905707331861:web:f84967504bc3b06396891c",
-    #   'measurementId': "G-RDLMJFQGZR",
-    #   'databaseURL':" ",
-    # }
-
-    # service={
-    #   "type": "service_account",
-    #   "project_id": "ecom-56940",
-    #   "private_key_id": "195f9af1284246423cc355ed717b99830313f4df",
-    #   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCr9MJZfbB1M9VJ\n6IvRt0VQYH36pubVn824BKvYuTCRLBZV1YCpz+zSCs7afeIwFtT8OsYL8MTEjie6\n8f1PDALMsqcml7+wTH4dVHzVV1+yx65rfoUmki3jrQFbmXDjvR86G9L4uCcwP/7c\nA2ittpubjHToUwggp7C/FXfP4WcvkouLXhM9u1AndJ7sxpN1HcMMKf9VihrOksH+\n08iS55m42G0qIwmC7VT6grQMNouFLWBfbNRz+R55rtHa9p8vwFd6zmBUz86izt/e\n6MsRLkq1ZjavkwfPVPW1hLDPLdto98230ayOKO9crsXJ7nAc+biTrDfDtLMOqROM\nt0pg3rupAgMBAAECggEAAd0G5UX3ia8zcBUYmH/cn5y2W77kGGyeZZt8RAuEcb6E\nAP0rt2BmJDjzKScOf1qYcV/pYyFsYvTybvT4DA0HFWyyIW+pHHGOY1WxSmMRN24M\nYDTjR+TSSdNzMLsqArXGGi743L1/RfX+i2m49UmFtgQFRt8OrBqpNe8O+qXt9OkS\nDezViJsILI/zhvcQFHT579/Y1ldkxoeF1BZ004K4EeRt98uIxIdqQHsTmj3A/M8K\nIaz7kIJ8JVB9rPh7r46aBhwAYQHHCA4u/m5hpSNfGfvbXOUNXPba81B2vxoR7siN\nZUw6iEXvPKG8gxD5OluBT7LrBxWJJ+LhFVrmCO5pNwKBgQDwZOCD9kTxBmJw4QF5\n/crV6uKTcdJmPj78ri4RzDe4SWkZeaj522c962gCFX01ng8hoSJwBidxHq72rYV0\nL79APQ5qwFJ8dTG+hJDONupUAHNyRqhidDym9ue8R3OknzetEV0g7+U98do337qa\nqfkqD2RWaPPlCKw1x7sY6dWgCwKBgQC3HoH08rFGQPVPYNlwgIGEOwxI7E0SjjYd\nPBx30wo7QpZqhM7I6afOVVLeEDWcGtH7Jlz6XxVzfCY9SQm2rsjpLKeLV3O78DHa\nNNku6NfS+YZHtHh63bT0/lwHOvT716jhMdr241T7TMQ63J+HUGk0/X2kdH0FrqN8\nbOCljmCfmwKBgQCaLvlZajDZrlChOY+q4L6h6Z8dFpnt/eqEQmtF+weZ6WvBbSiV\n6MUVD9GL1KCULSZjWWgvFaNiiF2L1cuMs7skxoRir6u4K6qWGYyO1uYArrFdEDib\nvRXRuPb06ZcgdQZOuJ5Uq8kKq/5ca+DRpkcrVOf0DCiyM5fQfqRf3Eqp9QKBgGKx\nDYdvmX1smwl6ABazG5qhnGBdArjibmXZNNqboiMIIzsrcqszyt3YfH30LICCr/L0\n3R2PS2dfXNig2ZxcnSmWiIH/0v9SV/vribXPhipNk0JoEJrfjJyRzhWTf9+PfpRI\nI2P2Z6G84PF8YHo0K0+E40dUBOGgGrp/j5+KmabLAoGBALj9EKAPk0Funa3hn8Wi\n5bON6O3nuCOObd37IswWPajzG9YqYaB6JNjOHTrAG98blv8LO7DetwgZjxV4HeNL\n16iv/jfH8l02C/xp5eh8PE/tD0TGwzYsh8nlS76pT86+r5G3bHAEREyrRSbD6RuB\nd437vK6/UufIxGlF5iuthoUG\n-----END PRIVATE KEY-----\n",
-    #   "client_email": "firebase-adminsdk-mr0hg@ecom-56940.iam.gserviceaccount.com",
-    #   "client_id": "112109638455070073064",
-    #   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    #   "token_uri": "https://oauth2.googleapis.com/token",
-    #   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    #   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-mr0hg%40ecom-56940.iam.gserviceaccount.com",
-    #   "universe_domain": "googleapis.com"
-    # }
-}
 
 cred=credentials.Certificate(service)
 firebase_admin.initialize_app(cred)
@@ -59,7 +33,7 @@ database = firestore.client()
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
 
-############ login
+# Create your views here.
 def user_login(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
@@ -75,7 +49,6 @@ def user_login(request):
     except Exception as e:
         print(f"fail to sign in: {e}")
     return render(request,'login_page.html')
-############## singup 
 def Singup(request):
     Name=request.POST.get('name')
     Mobile_number=request.POST.get('Mobile_number')
@@ -84,10 +57,7 @@ def Singup(request):
     customer_data={
         'Name':Name,'Mobile_number':Mobile_number,'Email':Email,'password':password,
     }
-    # print(customer_data)
     try:
-        main_id=Name[::2]+Mobile_number[::3]+Email[::4]
-        customer_data['main_id']=main_id
         auth.create_user_with_email_and_password(Email,password)
         print(f'account oppen complet of {Name}')
         database.collection('customer').document(Email).set(customer_data)

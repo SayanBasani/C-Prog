@@ -1,0 +1,176 @@
+    {% extends "nav.html"%}
+    {% block titel %} product {%endblock%}
+    <!-- <link rel="stylesheet" href="product.css"> -->
+    {% block style %}
+    {% comment %} <style> {% endcomment %}
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 1000px;
+        }
+        /* add for product */
+        .profile{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            flex-direction: row;
+            padding: 15px;
+        }
+        .profileDiv{
+            /* border: 1px solid ; */
+            margin: 2px;
+        }
+        .prof_dit_1{
+            /* border: 2px solid rgb(0, 94, 255); */
+            position: sticky;
+            /* position: fixed; */
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* LEFT ditels */
+        /* images add swip-button */
+        .img{
+            display: grid;
+            height: 450px;
+            /* border: 2px solid black; */
+            grid-template-areas: 
+            "a b b b b c"
+            ;
+        }
+        .btn-img{
+            border-style: hidden;
+            font-size: 25px;
+        }
+        /* buy and add to cart */
+        .prof_dit_1{
+            display: flex;
+        }
+        .buy-btn{
+            width: 150px;
+            height: 50px;
+            margin: 3px;
+        }
+        .buy{
+            display: flex;
+            justify-content: center;
+        }
+        /* product ditels */
+        .prodAllDet{
+            /* display: grid; */
+            padding: 2px;
+        }
+        .prodName{
+            font-size: 24px;
+        }
+        .prodRating{
+            font-size: 18px;
+        }
+        .prodPrice{
+            font-size: 28px;
+        }
+        .offers{
+            display: grid;
+            grid-template-areas: 
+            "a a a"
+            "b c d"
+            ;
+        }
+        .offerBtn{
+            width: 150px;
+            height: 100px;
+            border-style: hidden;
+        }
+        .prodBasicDet{
+            /* border: 2px solid red; */
+            margin: 8px;
+        }
+        .AvailableOffers{
+            grid-area: a;
+        }
+        .partnerOffers_1{
+            grid-area: b;
+        }
+        .partnerOffers_2{
+            grid-area: c;
+        }
+        .offerSpace{
+            grid-area: d;
+        }
+        .offerBtn-head ,.AvailableOffers{
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .hig{
+            margin: 2px;
+            display: flex;
+            font-weight: bold;
+            margin: 8px;
+        }
+        .hig-dtls{
+            font-weight: normal;
+        }
+    {% comment %} </style> {% endcomment %}
+    {% endblock %}
+<!-- </head>
+<body> -->
+    {% block content %}
+    <div class="profile">
+        <div class="prof_dit_1 profileDiv">
+            <div class="img">
+                <button class="btn-img btn-l" style="grid-area: a;"><</button>
+                <div class="spaceForImg" style="grid-area: b;"></div>
+                <button class="btn-img btn-r" style="grid-area: c;">></button>
+            </div>
+            <div class="buy">
+                <button class="buy-btn">ADD TO CART</button>
+                <button class="buy-btn">BUY</button>
+            </div>
+        </div>
+        <div class="prof_dit_2 profileDiv prodAllDet">
+            <p class="prodBasicDet prodName">Motorola g54 5G (Mint Green, 128 GB) </p>
+            <p class="prodBasicDet prodRating">4.2*</p>
+            <hr>
+            <div class="prodBasicDet prodPrice">
+                <p class="price">500 r.s</p>
+            </div>
+            <hr>
+            <div class="prodBasicDet offers">
+                <p class="AvailableOffers">Available offers</p>
+                <button class="offerBtn bankOffers_1">
+                    <p class="offerBtn-head">Bank Offers</p>
+                    <p>about offers</p>
+                    <div style="height: 15px;"></div>
+                    <p>Other Offers</p>
+                </button>
+                <button class="offerBtn partnerOffers_2">
+                    <p class="offerBtn-head">Partner Offers</p>
+                    <p>about offers</p>
+                    <div style="height: 15px;"></div>
+                    <p>Other Offers</p>
+                </button>
+                <div class="offerBtn offerSpace"></div>
+                <!-- <button class="partnerOffers"></button> -->
+            </div>
+            <hr>
+            <!-- heilight -->
+            <div class="Highlights">
+                <div class="hig">Brand      :<p class="hig-dtls">abc</p></div>
+                <div class="hig">Name       :<p class="hig-dtls">abc</p></div>
+                <div class="hig">Model      :<p class="hig-dtls">abc</p></div>
+                <div class="hig">Colour     :<p class="hig-dtls">abc</p></div>
+                <div class="hig">Meterial   :<p class="hig-dtls">abc</p></div>
+            </div>
+            <hr>
+            <div class="specifictions">
+                <h3 class="spec-heding">About this item</h3>
+                <div class="specAllText">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

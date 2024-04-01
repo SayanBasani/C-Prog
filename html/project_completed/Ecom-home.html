@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titel%} Out of Zone {%endblock%} </title>
-    <!-- <link rel="stylesheet" href="Try_home2.css"> -->
+    <title>Try home 2</title>
+    <!-- <link rel="stylesheet" href="Try_home2.css">  -->
     <style>
         *{
     margin: 0;
@@ -149,8 +149,7 @@ body{
 .nav2_button:hover{
     border: 2px solid white;
 }
-{% block style %}{% endblock %}
-    </style>        
+    </style>    
 </head>
 <body>
     <!-- ---------------main nav -------------------- -->
@@ -187,16 +186,24 @@ body{
         <span onclick="opennav()" class="nav1_item"id="nav1_1">&#9776;</span>
         <div class="nav1_item" id="nav1_2"><a href="">Home</a></div>
         <div class="nav1_item" id="nav1_3"><input type="text" class="nav1_search" placeholder="   Search"></div>
-        <div class="nav1_item" id="nav1_4"><a href="{% url 'customer:user_login' %}" class="nav1_login">Login/Signup</a></div>
+        <div class="nav1_item" id="nav1_4"><a href="" class="nav1_login">Login/Signup</a></div>
     </header>
-    <script>
-        function closenav() {
-            document.getElementById("sidenav").style.width="0";
-        }
-        function opennav(){
-            document.getElementById('sidenav').style.width="250px";
-        }
-    </script>
-    {% block content %}{% endblock %}
+    <!-- ---------------second nav -------------------- -->
+    <div class="nav2">
+        <div class="nav2_item" id="nav2_2"><button class="nav2_button" id="">Catagory</button></div>
+        <div class="nav2_item" id="nav2_3"><button class="nav2_button" id="">Populer</button></div>
+        <div class="nav2_item" id="nav2_1"><button class="nav2_button" id="">Best Sellers</button></div>
+        <div class="nav2_item" id="nav2_4"><button class="nav2_button" id="">Computer</button></div>
+        <div class="nav2_item" id="nav2_5"><button class="nav2_button" id="">Electronics</button></div>
+        <div class="nav2_item" id="nav2_6"><button class="nav2_button" id="">Gift Ideas</button></div>
+    </div>
 </body>
+<script>
+    function closenav() {
+        document.getElementById("sidenav").style.width="0";
+    }
+    function opennav(){
+        document.getElementById('sidenav').style.width="250px";
+    }
+</script>
 </html>
