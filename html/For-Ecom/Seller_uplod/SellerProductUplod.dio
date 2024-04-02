@@ -1,0 +1,145 @@
+<mxfile host="65bd71144e">
+    <diagram id="E0TVo7tDnFWuVbixUaHK" name="Page-1">
+        <mxGraphModel dx="988" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="110" width="370" height="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Nav" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="110" width="370" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="170" width="370" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="170" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Uplode" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="435" y="170" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="170" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="375" y="210" width="240" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="300" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Name" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="300" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="input" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="465" y="300" width="135" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="340" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Descreption" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="395" y="350" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="220" width="210" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="img uplod" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="230" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="img uplod" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="455" y="230" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="img uplod" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="230" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="img uplode" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="555" y="230" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="input" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="465" y="355" width="125" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="this part i add some type selecter&amp;nbsp;&lt;br&gt;means type of products ( mobile ,&lt;br&gt;shows , cloths) for each type he have a specefic data gathering ." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="450" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="28" target="30" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="395" y="460" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="30" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="select&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="510" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="720" width="120" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="33" target="64">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="mobile" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="895" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="34" target="55" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="860" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="shows" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="755" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" style="edgeStyle=none;html=1;entryX=0.168;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="35" target="64" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340" y="970" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="laptop" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="860" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="36" target="59" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="gagets" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="825" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="edgeStyle=none;html=1;" parent="1" source="37" target="61" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="toys" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="790" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="38" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="680" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="cloths" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="720" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="display size , display , battery , network , brand , ram &amp;amp; rom , waight,camera,procacers,warrenty,model number,color,sim slort,batery type,charging" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="882.5" width="320" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="color,brand,size,faeric,desine,paterns,type,model , for whom ,waight" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="296" y="640" width="320" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="display size , display , battery , network , brand , ram &amp;amp; rom , waight,camera,procacers,warrenty,model number,color,wifi ,batery type,&lt;br&gt;grepic , type , charging watt ,&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="522.5" y="817.5" width="315" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="size&amp;nbsp; , battery , wireless connection , brand , waight&amp;nbsp; ,warrenty, model number ,color, batery type&amp;nbsp;, type , charging&amp;nbsp;&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="750" width="330" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="age , waight , charge , size , material , brand , type&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="317.5" y="700" width="297.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="display size , display , battery , network , brand , ram &amp;amp; rom , waight,camera,procacers,warrenty,model number,color,sim slort,wifi , batery type,grafic , charging" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="175" y="940" width="320" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
