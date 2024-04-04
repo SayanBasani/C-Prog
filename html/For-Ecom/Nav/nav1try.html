@@ -18,7 +18,7 @@
                     <div class="a">Hello,</div>
                     <div class="b">Sayan basani</div>
                 </div>
-                <div class="sideNav_Singup_logo" onclick="closenav()" style="border: 2px solid red;padding: 12px;"><span class="material-symbols-outlined" onclick="closenav()">close</span></div>
+                <div class="sideNav_Singup_close" onclick="closenav()" style="padding: 12px;"><span class="material-symbols-outlined" onclick="closenav()">close</span></div>
             </a>
         </div>
         <div class="sideNav-opt sideNav_order">
@@ -65,11 +65,9 @@
 
         </div>
     </div>
-    <!-- <div class="sideNav-opt"></div> -->
-    <!-- <div class="sideNav-opt"></div> -->
     <div class="navBody">
         <div class="navEle dot3" onclick="opennav()">&#9776;</div>
-        <div class="navEle logo"><img class="logo_img" src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk_logo_plus_mobile-f60446.svg" alt=""></a></div>
+        <div class="navEle logo"><img class="logo_img" n alt=""></a></div>
         <div class="navEle serchBar"><input type="text" class="serchBar-input" placeholder="  Serch For Product, Brand and More"></div>
         <div class="navEle profile"><a href="" class="navBody-button profile-btn">Profile</a></div>
         <div class="navEle cart"><a href="" class="navBody-button cart-btn">Cart</a></div>
@@ -80,7 +78,7 @@
     <!-- by my old prog -->
     <script>
         function closenav(){
-            document.querySelector(".sideNav").style.display='none';
+            document.querySelector(".sideNav").style.width='0';
         }
         function opennav(){
             document.querySelector('.sideNav').style.width="400px";
