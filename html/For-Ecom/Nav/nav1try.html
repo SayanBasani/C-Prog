@@ -18,7 +18,7 @@
                     <div class="a">Hello,</div>
                     <div class="b">Sayan basani</div>
                 </div>
-                <div class="sideNav_Singup_logo" onclick="closenav()"><span class="material-symbols-outlined" onclick="closenav()">close</span></div>
+                <div class="sideNav_Singup_logo" onclick="closenav()" style="border: 2px solid red;padding: 12px;"><span class="material-symbols-outlined" onclick="closenav()">close</span></div>
             </a>
         </div>
         <div class="sideNav-opt sideNav_order">
@@ -79,13 +79,11 @@
 
     <!-- by my old prog -->
     <script>
-        function closenav() {
-            // document.querySelector(".sidenav").style.width="0";
-            document.getElementById("sidenav").style.width="0";
+        function closenav(){
+            document.querySelector(".sideNav").style.display='none';
         }
         function opennav(){
             document.querySelector('.sideNav').style.width="400px";
-            // document.getElementById('sidenav').style.width="250px";
         }
     </script>
 
