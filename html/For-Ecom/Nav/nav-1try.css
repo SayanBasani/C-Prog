@@ -13,10 +13,6 @@ body{
 .material-symbols-outlined,.material-icons{
     color: rgb(46, 118, 243);
 }
-/* div{
-    padding: 2px;
-    margin: 2px;
-} */
 a{
     text-decoration: none;
     color: black;
@@ -36,7 +32,6 @@ a{
     align-items: center;
     height:40px;
     overflow: hidden;
-    /* border: 1px solid green; */
 }
 .logo{
     overflow: hidden;
@@ -50,9 +45,10 @@ a{
     height: 40p;
 }
 .dot3{
-    margin-left: 15px;
     font-size:30px;
     font-weight: bold;
+    cursor: pointer;
+
 }
 .serchBar-input{
     border-style: none;
@@ -74,28 +70,26 @@ a{
     background-color: rgb(246, 246, 246);
     border: 1px solid rgb(174, 174, 174);
     border-radius: 7px;
-    /* background-color: aqua; */
 }
 
 /* ------------------------ side nav --------------------- */
 
 .sideNav{
     margin-left: 40px;
-    width: 0px;
+    width: 0;
     overflow: hidden;
     position: absolute;
     background-color: rgb(255, 255, 255);
+    transition: 0.5s;
+    z-index: 1;
 }
 .sideNav > div{
-    border: 1px solid black;
     margin: 2px ;
 }
 .sideNav_opt{
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 .sideNav_opt > header{
     font-weight: bold;
@@ -112,15 +106,10 @@ a{
     align-items: center;
     font-size: 30px;
 }
-div{
-    /* border: 1px solid black;
-    padding: 1px; */
-}
 .sideNav_order,header{
     display: flex;
     align-items: center;
     height: 60px;
-    /* border: 1px solid black; */
     padding: 10px;
 }
 .sideNav_Singup>a{
@@ -149,7 +138,6 @@ div{
 .sideNav_order_text{
     padding-left: 20px;
     color: #878787;
-
 }
 .sideNav_opt>a{
     display: flex;

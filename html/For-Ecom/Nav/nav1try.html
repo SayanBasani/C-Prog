@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nav Try 1</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="nav-1try.css">
@@ -18,7 +18,7 @@
                     <div class="a">Hello,</div>
                     <div class="b">Sayan basani</div>
                 </div>
-                <div class="sideNav_Singup_logo"><span class="material-symbols-outlined" onclick="closeNav()">close</span></div>
+                <div class="sideNav_Singup_logo" onclick="closenav()"><span class="material-symbols-outlined" onclick="closenav()">close</span></div>
             </a>
         </div>
         <div class="sideNav-opt sideNav_order">
@@ -64,25 +64,63 @@
             <a href="#">Terms & Conditions</a>
 
         </div>
-        <!-- <div class="sideNav-opt"></div>
-        <div class="sideNav-opt"></div> -->
     </div>
+    <!-- <div class="sideNav-opt"></div> -->
+    <!-- <div class="sideNav-opt"></div> -->
     <div class="navBody">
-        <div class="navEle dot3" onclick="open()">&#9776;</div>
+        <div class="navEle dot3" onclick="opennav()">&#9776;</div>
         <div class="navEle logo"><img class="logo_img" src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk_logo_plus_mobile-f60446.svg" alt=""></a></div>
         <div class="navEle serchBar"><input type="text" class="serchBar-input" placeholder="  Serch For Product, Brand and More"></div>
         <div class="navEle profile"><a href="" class="navBody-button profile-btn">Profile</a></div>
         <div class="navEle cart"><a href="" class="navBody-button cart-btn">Cart</a></div>
         <div class="navEle notifaction"><a href="" class="navBody-button notifaction-btn">notifaction</a></div>
     </div>
+
+
+    <!-- by my old prog -->
     <script>
-        function closeNav(){
-            document.querySelector('.sideNav').style.width="0";
+        function closenav() {
+            // document.querySelector(".sidenav").style.width="0";
+            document.getElementById("sidenav").style.width="0";
         }
-        function open(){
-            document.getElementsByClassName("sideNav").style.width="300px";
+        function opennav(){
+            document.querySelector('.sideNav').style.width="400px";
+            // document.getElementById('sidenav').style.width="250px";
         }
     </script>
+
+    <!-- by gpt -->
+    <!-- <script>
+        function closeNav() {
+            document.querySelector(".sideNav").style.width = "0";
+        }
+        
+        function openNav() {
+            document.querySelector('.sideNav').style.width = "250px";
+        }
+    
+        // Add event listener to the dot3 element to toggle the side navigation
+        document.querySelector('.dot3').addEventListener('click', function() {
+            var sideNavWidth = document.querySelector('.sideNav').style.width;
+            if (sideNavWidth === '250px') {
+                closeNav(); // Close the side navigation if it's open
+            } else {
+                openNav(); // Otherwise, open it
+            }
+        });
+    </script> -->
+    
+    <!-- <script>
+        
+        function closenav() {
+            document.querySelector(".sideNav").style.width="0";
+            // document.getElementById("sidenav").style.width="0";
+        }
+        function opennav(){
+            document.querySelector('.sideNav').style.width="250px";
+            // document.getElementById('sidenav').style.width="250px";
+        }
+    </script> -->
 </body>
 </html>
 
