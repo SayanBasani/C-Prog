@@ -4,4 +4,5 @@ app_name='homepage'
 urlpatterns = [
     path('',views.HomePage,name='HomePage'),
     path('HomePage/',views.HomePage,name='HomePage'),
+    path('product/',views.product,name='product'),
 ]

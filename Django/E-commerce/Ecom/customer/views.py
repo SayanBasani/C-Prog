@@ -107,3 +107,5 @@ def Singup(request):
     except:
         print("Account cant't open")
     return render(request,'Singup.html')
+def cart(request):
+    return render(request , "cart.html")

@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
-    <!-- <link rel="stylesheet" href="product.css"> -->
+    <link rel="stylesheet" href="product.css"> -->
+    {% extends "nav.html"%}
+    {% block titel %}Product {%endblock%}
+    {% block style %}
     <style>
         *{
             margin: 0;
@@ -22,13 +25,10 @@
             padding: 15px;
         }
         .profileDiv{
-            /* border: 1px solid ; */
             margin: 2px;
         }
         .prof_dit_1{
-            /* border: 2px solid rgb(0, 94, 255); */
             position: sticky;
-            /* position: fixed; */
             top: 10px;
             display: flex;
             flex-direction: column;
@@ -39,7 +39,6 @@
         .img{
             display: grid;
             height: 450px;
-            /* border: 2px solid black; */
             grid-template-areas: 
             "a b b b b c"
             ;
@@ -63,7 +62,6 @@
         }
         /* product ditels */
         .prodAllDet{
-            /* display: grid; */
             padding: 2px;
         }
         .prodName{
@@ -88,7 +86,6 @@
             border-style: hidden;
         }
         .prodBasicDet{
-            /* border: 2px solid red; */
             margin: 8px;
         }
         .AvailableOffers{
@@ -116,10 +113,9 @@
         .hig-dtls{
             font-weight: normal;
         }
-    </style>
+    {%endblock%}
 
-</head>
-<body>
+    {% block content %}  
     <div class="profile">
         <div class="prof_dit_1 profileDiv">
             <div class="img">
@@ -175,5 +171,6 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    {%endblock%}
+/* </body>
+</html> */

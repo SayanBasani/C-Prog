@@ -1,7 +1,7 @@
 {%extends 'nav.html' %}
     {% block titel %}Seller Home{%endblock%}
     <!-- <link rel="stylesheet" href="Seller.css"> -->
-{% block style %}
+    {% block style %}
         *{
             margin: 0;
             padding: 0;
@@ -100,8 +100,14 @@
         .summery > *:nth-child(6){
             display: inline-block;
         }
+        .uplod{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            background-color:white;
+        }
 
-{% endblock style%}
+    {% endblock style%}
 {% block content %}
     <div class="seller_home">
         <div class="seller_home-1"></div>
@@ -112,7 +118,9 @@
                         <button class="seller_btn allProductGrouth">Analytics</button>
                         <button class="seller_btn allProduct">All Product</button>
                     </div>
-                    <button class="seller_btn  uplod">Uplod</button>
+                    <!-- <a href="{% url 'Seller:sellerUplod' %}?data={{ data|urlencode }}" class="seller_btn  uplod">Uplod</a> -->
+                    <a href="{% url 'Seller:sellerUplod' %}?data={{data}}" class="seller_btn  uplod">Uplod</a>
+                    <!-- <a href="{% url 'Seller:sellerUplod' %}" class="seller_btn  uplod">Uplod</a> -->
                     <div class="Seller-opt aboutFewProduct">
                         <button class="seller_btn last2ProdGroth">Last 2 product</button>
                         <button class="seller_btn last2Prod">Total Sells</button>

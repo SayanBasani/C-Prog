@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.urls import reverse
 import firebase,pyrebase,firebase_admin
 from firebase_admin import credentials , firestore
 
@@ -41,7 +42,7 @@ def Seller_login(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
     # email='1st@g.com'
-    # password='123456'
+    password='123456'
     print(f'{email} {password}')
     data=database.collection('Seller').document(email).get().to_dict()
     
@@ -49,9 +50,9 @@ def Seller_login(request):
         if(data["Email"] == email and data["password"]==password ):
             print(data)
             print("Seller sucess to sign up")
-            return render(request,"HomePage.html",{"data":data})
+            # request.session['Sdata'] = data
+            return sellerHome(request, data)
     else:
-        # print(f"fail to sign in")
         print(f"fail to sign in: {email}")
     return render(request,'Seller-login_Page.html')
 
@@ -75,4 +76,115 @@ def Seller_Singup(request):
         print("Account cant't open")
     return render(request,'Seller-Singup.html')
 
+def sellerHome(request , data):
+    print("your seller id is "+data['main_id'])
+    return render(request,"sellerHome.html",{'data':data})
 
+def sellerUplod(request):
+    Name = request.POST.get('name')
+    price = request.POST.get('price')
+    descreption = request.POST.get('descreption')
+    UplodedProduct_data= {
+        'Name':Name,'price':price,'descreption':descreption
+    }
+    select_opt = request.POST.get('hidden_data')
+    if(select_opt == 'Clothes' or select_opt == 'Shows'):
+        # color,brand,size,faeric,desine,paterns,type,model , User ,waight
+        color = request.POST.get('color')
+        brand = request.POST.get('brand')
+        size = request.POST.get('size')
+        faeric = request.POST.get('faeric')
+        desine = request.POST.get('desine')
+        paterns = request.POST.get('paterns')
+        type = request.POST.get('type')
+        model = request.POST.get('model')
+        User = request.POST.get('User')
+        waight = request.POST.get('waight')
+        option = select_opt
+        product_data = {
+            'color':color,'brand':brand,'size':size,'faeric':faeric,'desine':desine,'paterns':paterns,'type':type,'model':model,
+            'User':User,'waight':waight,"option":option
+        }
+        UplodedProduct_data.update(product_data)
+        # print(product_data)
+    elif(select_opt == 'mobile' or select_opt == 'Laptop'):
+        # display size , display , battery , network , brand , ram & rom , waight,camera,procacers,warrenty,model number,color,sim slort,wifi , batery type,grafic , charging -->
+        displaysize = request.POST.get('displaysize')
+        display = request.POST.get('display')
+        battery = request.POST.get('battery')
+        network = request.POST.get('network')
+        brand = request.POST.get('brand')
+        ramrom = request.POST.get('ram&rom')
+        waight = request.POST.get('waight')
+        camera = request.POST.get('camera')
+        procacers = request.POST.get('procacers')
+        warrenty = request.POST.get('warrenty')
+        modelnumber = request.POST.get('modelnumber')
+        color = request.POST.get('color')
+        simslort = request.POST.get('simslort')
+        wifi = request.POST.get('wifi')
+        baterytype = request.POST.get('baterytype')
+        grafic = request.POST.get('grafic')
+        charging = request.POST.get('charging')
+        option = select_opt
+        product_data = {
+            'displaysize':displaysize,'display':display,'battery':battery,'network':network,'brand':brand,'camera':camera,'procacers':procacers,'warrenty':warrenty,
+            'modelnumber':modelnumber,'color':color,'simslort':simslort,'wifi':wifi,'baterytype':baterytype,'grafic':grafic,'charging':charging,'option':option
+        }
+        UplodedProduct_data.update(product_data)
+        # print(product_data)
+    elif(select_opt == 'Gagets'):
+        # size  , battery , wireless connection , brand , waight  ,warrenty, model number ,color, batery type , type , charging   -->
+        batterypresent = request.POST.get('batterypresent')
+        chargable = request.POST.get('Chargable')
+        brand = request.POST.get('Brand')
+        weight = request.POST.get('waight')
+        model_number = request.POST.get('modelnumber')
+        color = request.POST.get('color')
+        wireless_connection = request.POST.get('wirelessconnection')
+        battery_type = request.POST.get('baterytype'),
+        option = select_opt
+        product_data = {
+            'batterypresent': batterypresent,
+            'Chargable': chargable,
+            'Brand': brand,
+            'waight': weight,
+            'modelnumber': model_number,
+            'color': color,
+            'wirelessconnection': wireless_connection,
+            'baterytype': battery_type,
+            'option':option
+        }
+        UplodedProduct_data.update(product_data)
+        # print(product_data)
+    elif(select_opt == 'Toys'):
+        age = request.POST.get('age')
+        waight = request.POST.get('Waight')
+        chargable = request.POST.get('Chargable')
+        size = request.POST.get('Size')
+        material = request.POST.get('material')
+        brand = request.POST.get('Brand')
+        type_ = request.POST.get('Type')
+        model = request.POST.get('Model')
+        user = request.POST.get('User')
+        option = select_opt
+        product_data = {
+            'age': age,
+            'Waight': waight,
+            'Chargable': chargable,
+            'Size': size,
+            'material': material,
+            'Brand': brand,
+            'Type': type_,
+            'Model': model,
+            'User': user,
+            'option':option,
+        }
+        UplodedProduct_data.update(product_data)
+        # print(product_data)
+    
+    # database.collection('Products').document(select_opt).set(UplodedProduct_data)
+    database.collection('Products').document(select_opt).set(UplodedProduct_data)
+    print("data uplod Succesfull")
+    # print(UplodedProduct_data)
+    return render(request,'sellerUplod.html')
