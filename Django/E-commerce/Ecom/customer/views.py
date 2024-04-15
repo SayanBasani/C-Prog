@@ -30,6 +30,7 @@ from django.shortcuts import render,redirect
 import pyrebase
 import firebase_admin
 from firebase_admin import credentials , firestore
+from google.cloud.firestore_v1.base_query import FieldFilter
 
 firebaseConfig = {
   'apiKey': "AIzaSyA1l6YTxtr8Xx7KcdPytaKs2YsGblMMNJk",
@@ -64,13 +65,15 @@ database = firestore.client()
 
 ############ login
 def user_login(request):
+    data = None
+    data = request.session.get('data')
     email = request.POST.get('email')
     password = request.POST.get('password')
     # email='1st@g.com'
     # password='123456'
     print(f'{email} {password}')
     data=database.collection('customer').document(email).get().to_dict()
-    
+    request.session['data'] = data
     if data  : 
         if(data["Email"] == email and data["password"]==password ):
             print(data["Email"])
@@ -78,16 +81,13 @@ def user_login(request):
             print('sayan basani command have to be fllow \n \n \n ok ok ok ')
             print(data)
             print("sucess to sign up")
-            return render(request,"HomePage.html",{"data":data})
-            # return redirect(f"/doctor/doc-dashboard?doc_id={email}")
-            # return render(request, "appointments_req.html", {"pat_ids": pat_id, "data": appointment_requests})
+            return redirect("homepage:HomePage")
     else:
-        # print(f"fail to sign in")
         print(f"fail to sign in: {email}")
     return render(request,"login_page.html")
-
-
-############## singup 
+def logOutCustomer(request):
+    print("try to log out")
+    return redirect('customer:user_login')
 def Singup(request):
     Name=request.POST.get('name')
     Mobile_number=request.POST.get('Mobile_number')
@@ -102,10 +102,34 @@ def Singup(request):
         customer_data['main_id']=main_id
         database.collection('customer').document(Email).set(customer_data)
         print(f'account oppen & data uplod complet of {Name}')
-        # return redirect('homepage:HomePage')
         return redirect('customer:user_login')
     except:
         print("Account cant't open")
     return render(request,'Singup.html')
 def cart(request):
     return render(request , "cart.html")
+def order(request):
+    return render(request , "order.html")
+def product_list(request):
+    data=request.session.get('data')
+    print(data)
+    print('you are in produce list -------------------------------------------------------------')
+    search = request.GET.get('search')
+    print(f'User serch {search}')
+    # docs = database.collection('Clothes').stream()
+    # docs = database.collection('Clothes').where(filter=FieldFilter("price","==","600")).stream()
+    # print(docs.to_dict())
+    
+    docs = database.collection("Products").where(filter=FieldFilter("UplodedProduct_data", "!=", " ")).stream()
+    print(docs  )
+    # docs = database.collection("Seller").where(filter= FieldFilter("Email","==","1@g.com")).stream()
+
+    for doc in docs:
+        print(f"{doc.id} => {doc.to_dict()}")
+    
+    # for doc in docs:
+    #     print(f'Document ID: {doc.id}')
+    #     print(f'Document Data: {doc.to_dict()}')
+        # print('\n\n\n')
+    print('.....................................................')
+    return render(request , "product_list.html",{'data':data,'docs':docs})

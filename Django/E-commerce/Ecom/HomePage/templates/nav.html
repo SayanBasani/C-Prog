@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>{% block title %}Only Nav{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nav Try 1</title>
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -168,6 +168,10 @@
         .sideNav_opt>a:hover,.sideNav-opt>a:hover,.sideNav_order_text:hover{
             color: rgb(46, 118, 243);
         }
+        .serchForm{
+            height: 40px;
+            width: 100%;
+        }
         {% block style %} {%endblock%}
     </style>
     
@@ -265,7 +269,7 @@ My Sells    -->
                     Earn with Sells
                 </div>
             </header>             
-            <a href="{% url 'Seller:Seller_login'%}">Sells Creator Studio</a>
+            <a href="{% url 'Seller:sellerHome'%}">Sells Creator Studio</a>
             <a href="#">My Sells</a>
             <!-- <a href="#">Women fashion</a>
             <a href="#">Other</a> -->
@@ -280,16 +284,39 @@ My Sells    -->
             </header>      
             <a href="#">Custemor Service</a>
             <a href="#">Terms & Conditions</a>
+            {% if data %}
+                <a href="{% url 'customer:logOutCustomer' %}">Log Out</a>
+            {% else %}
+                <a href="{% url 'customer:user_login'%}">Login/Signup</a>
+            {%endif%}
 
         </div>
     </div>
     <div class="navBody">
         <div class="navEle dot3" onclick="opennav()">&#9776;</div>
-        <div class="navEle logo"><img class="logo_img" n alt=""></a></div>
-        <div class="navEle serchBar"><input type="text" class="serchBar-input" placeholder="  Serch For Product, Brand and More"></div>
+        <div class="navEle logo"><a class="logo_img" href="{% url 'homepage:HomePage'%}" alt="">HOME</a></div>
+        <div class="navEle serchBar">
+            <form id="searchForm" action="{% url 'customer:product_list' %}" method="get" class="serchForm">{% csrf_token %}
+                <input type="text" name="search" class="serchBar-input" placeholder="  Search For Product, Brand and More">
+                <button type="submit" style="display: none;">Search</button>
+            </form>
+        </div>
+        
+        <script>
+            document.getElementById("searchForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+                
+                var searchQuery = document.querySelector(".serchBar-input").value.trim(); // Get the search query from the input field
+                if (searchQuery) {
+                    var url = "{% url 'customer:product_list' %}?search=" + encodeURIComponent(searchQuery); // Construct the URL with the search query parameter
+                    window.location.href = url; // Redirect to the product list page with the search query
+                }
+            });
+        </script>
+        
         <div class="navEle profile"><div class="navBody-button profile-btn">
             {% if data %}
-                <button class="navBody-button" style="border-style: none; background-color: white;">
+                <button class="navBody-button" style="border-style: none; background-color: white; border-radius: 5px;">
                     {{data.Name}}
                 </button>
             {% else %}

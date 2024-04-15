@@ -33,7 +33,10 @@ cred = credentials.Certificate(service)
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 database = firestore.client()
+# firebase = pyrebase.initialize_app(firebaseConfig)
+# auth = firebase.auth()
 
+# Create your views here.
 def HomePage(request):
     return render(request,'SellerHom.html')
 
@@ -57,12 +60,10 @@ def Seller_Singup(request):
 
 
 def Seller_login(request):
-    data = None
-    request.session['data'] = data
-    print("you are in seler login page .////////////////////////////")
     email = request.POST.get('email')
     password = request.POST.get('password')
-    # password='123456'
+    # email='1st@g.com'
+    password='123456'
     print(f'{email} {password}')
     data=database.collection('Seller').document(email).get().to_dict()
     
@@ -71,44 +72,76 @@ def Seller_login(request):
             print(data)
             print("Seller sucess to sign up")
             request.session['data'] = data
-            return redirect('Seller:sellerHome')
+            # return sellerHome(request, data)
+            return render(request,'sellerHome.html',{'data':data})
     else:
         print(f"fail to sign in: {email}")
     return render(request,'Seller-login_Page.html')
 
-from django.contrib.auth import logout
-
-def logout(request):
-    return redirect('Seller_login')
 
 
 def sellerHome(request):
-    print("you are in seler home page .////////////////////////////")
-    data = request.session.get('data', {})
-    if data == None or data == {}:
-        return redirect('Seller:Seller_login')
-    else:
-        print("..................................................")
-        print(data)
-        print("..................................................")
-        request.session['data'] = data
-    return render(request,"sellerHome.html",{'data':data})
+    data = 11
+    if data is None:
+        data = request.session.get('data', {})
+    print("..................................................")
+    print(data)
+    # print(data['Name'])
+    print("..................................................")
+    seller_id = data['main_id']
+    print(seller_id)
+    return render(request,"sellerHome.html",{'seller_id':seller_id,'data':data})
+# def sellerHome(request,data ):
+#     print("..................................................")
+#     print(data)
+#     # print(data['Name'])
+#     print("..................................................")
+#     seller_id = data['main_id']
+#     print(seller_id)
+#     return render(request,"sellerHome.html",{'seller_id':seller_id,'data':data})
+{            # def sellerHome(request , data):
+            #     seller_id = data['main_id']
+            #     return render(request,"sellerHome.html",{'seller_id':seller_id,'data':data})
+}
+
+# def sellerUplod(request ):
+#     Name = request.POST.get('name')
+#     print('\n \n \n')
+#     data = request.GET
+#     print(data)
+#     print("data uplod Succesfull")
+#     for i in data.items():
+#         print(i)
+#     print("the first type *********************")  
+#     print(data['data'])
+#     # for key, value in data.items():
+#     #     print(value)
+        
+#     if Name != None:
+#         return render(request,'UplodSuccesfull.html',{'Name':Name,'data':data})
+#     else:
+#         print("It uploding not complit")
+#     return render(request,'sellerUplod.html',{'s':data,'data':data})
+
+
+
 
 def sellerUplod(request ):
-    print("you are in seler uplod page .////////////////////////////")
-    data = request.session.get('data', {})
-    email = data['Email']
+    # main_id = request.GET.get('i')
+    email = request.GET.get('email')
     print('...............................................................................')
-    print(data)
-    print(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
     print(email)
-    print(',.,.,.,.,.,.,.')
     
+    data = database.collection('Seller').document(email).get().to_dict()
+    # main_id = data['main_id']
     print(data)
+    # print(main_id + " " + email+" \n")
     Name = request.POST.get('name')
     price = request.POST.get('price')
     descreption = request.POST.get('descreption')
-    UplodedProduct_data= {'Name':Name,'price':price,'descreption':descreption}
+    UplodedProduct_data= {
+        'Name':Name,'price':price,'descreption':descreption
+    }
     select_opt = request.POST.get('hidden_data')
     if(select_opt == 'Clothes' or select_opt == 'Shows'):
         # color,brand,size,faeric,desine,paterns,type,model , User ,waight
@@ -204,29 +237,23 @@ def sellerUplod(request ):
         }
         UplodedProduct_data.update(product_data)
         print(product_data)
-    
-    database.collection('ok').document('1').set({
-        'name':'akash',
-        'age':20,}
-    )
-
-    if (select_opt == 'Clothes' or select_opt == 'Shows' or select_opt == 'Laptop' or select_opt == 'mobile' or select_opt == 'Gagets' or select_opt == 'Toys'):
-        ok=database.collection('Products').document(select_opt).collection('Products').document(Name).set({'UplodedProduct_data':UplodedProduct_data,'Seller_data':data,})
-        ok=database.collection(select_opt).document(Name).set({'UplodedProduct_data':UplodedProduct_data,'Seller_data':data,})
-        print(ok)
-    else :
-        print("bal chal data push truy """"""""""""""""""""""""""""""""""""""")
+    ok=database.collection('Products').document(select_opt).collection('Products').document(Name).set({
+        'UplodedProduct_data':UplodedProduct_data,
+        'Seller_data':data,
+    })
+    print(ok)
     print("data uplod Succesfull")
     print(UplodedProduct_data)
     if Name != None:
         return render(request,'UplodSuccesfull.html',{'Name':Name,'data':data})
+        # return uplodSucessFull(request,Name)
     else:
         print("It uploding not complit")
-    return render(request,'sellerUplod.html',{'data':data})
+    return render(request,'sellerUplod.html',{'s':email,'data':data})
+
+
 
 
 def uplodSucessFull(request,Name):
-    print("you are in seler login page .////////////////////////////")
     print(" after sucessfull uplod name is "+Name)
-    seller_home_url = render('Seller:sellerHome')
-    return render(request,'UplodSuccesfull.html',{'seller_home_url': seller_home_url})
+    return render(request,'UplodSuccesfull.html')

@@ -1,5 +1,5 @@
 {%extends 'nav.html' %}
-    {% block titel %}Seller Home{%endblock%}
+{% block title %}Seller Home{% endblock %}
     <!-- <link rel="stylesheet" href="Seller.css"> -->
     {% block style %}
         *{
@@ -109,6 +109,7 @@
 
     {% endblock style%}
 {% block content %}
+
     <div class="seller_home">
         <div class="seller_home-1"></div>
         <div class="Seller_Home" style="background-color: rgb(175, 192, 187);">
@@ -118,9 +119,10 @@
                         <button class="seller_btn allProductGrouth">Analytics</button>
                         <button class="seller_btn allProduct">All Product</button>
                     </div>
-                    <!-- <a href="{% url 'Seller:sellerUplod' %}?data={{ data|urlencode }}" class="seller_btn  uplod">Uplod</a> -->
-                    <a href="{% url 'Seller:sellerUplod' %}?data={{data}}" class="seller_btn  uplod">Uplod</a>
-                    <!-- <a href="{% url 'Seller:sellerUplod' %}" class="seller_btn  uplod">Uplod</a> -->
+                    <!-- <a href="{% url 'Seller:sellerUplod' %}?data={{data}}" class="seller_btn  uplod">Uplod</a> -->
+                    <!-- <a href="{% url 'Seller:sellerUplod' %}?email={{data.Email}}" class="seller_btn  uplod">Uplod</a> -->
+                    <!-- <a href="{% url 'Seller:sellerUplod' %}?i={{data.main_id}}&email={{data.Email}}" class="seller_btn  uplod">Uplod</a> -->
+                    <a href="{% url 'Seller:sellerUplod' %}" class="seller_btn  uplod">Uplod</a>
                     <div class="Seller-opt aboutFewProduct">
                         <button class="seller_btn last2ProdGroth">Last 2 product</button>
                         <button class="seller_btn last2Prod">Total Sells</button>
@@ -169,6 +171,7 @@
                 </div>
     
             </div>
+            <a href="{% url 'Seller:logout' %}" style="border-style: none; cursor: pointer;height: 2rem;background-color: rgb(207, 233, 233); border-bottom: .5px solid gray;margin-inline: 25%; display: flex; justify-content: center;align-items: center;">log out</a>
         </div>
         <div class="seller_home-3"></div>
     </div>
