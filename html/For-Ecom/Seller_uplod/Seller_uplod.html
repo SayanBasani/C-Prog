@@ -31,7 +31,7 @@
                     </div>
                     <div class="product-discreption product-deep others">
                         <div class="others_options" style="display: flex;justify-content: center;">
-                            <select name="" id="other">
+                            <select name="" id="other" class="others_options_class" onchange="selected_values()">
                                 <option value="others">others</option>
                                 <option value="Clothes">Clothes</option>
                                 <option value="Shows">Shows</option>
@@ -256,5 +256,44 @@
             </div>
         </form>
     </div>
+    <script>
+        let value = document.querySelector(".others_options_class");
+        // value.addEventListener()
+        function selected_values(){
+            sele_val= value.value;
+            console.log(sele_val);
+            // document.getElementsByClassName(sele_val).style.display="contents";
+            chan(sele_val)
+        }
+        function chan( name ){
+            document.getElementsByClassName(name).style.display="contents";
+        }
+        function clic() {
+            console.log("clicked ");
+        }
+
+        //  gpt 
+
+        function selected_value() {
+            var selectElement = document.getElementById('other');
+            var selectedOption = selectElement.value;
+            
+            // Hide all sections first
+            var allSections = document.querySelectorAll('.others-options_managed > div');
+            allSections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            
+            // Show the section based on the selected option
+            if (selectedOption === 'Clothes' || selectedOption === 'Shows') {
+                document.querySelector('.clothes_shows').style.display = 'block';
+            } else if (selectedOption === 'mobile' || selectedOption === 'Laptop' || selectedOption === 'Gagets') {
+                document.querySelector('.Mobile_laptop').style.display = 'block';
+            } else if (selectedOption === 'Toys') {
+                document.querySelector('.toys').style.display = 'block';
+            }
+        }
+
+    </script>
 </body>
 </html>

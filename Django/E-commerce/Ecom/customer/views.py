@@ -116,20 +116,14 @@ def product_list(request):
     print('you are in produce list -------------------------------------------------------------')
     search = request.GET.get('search')
     print(f'User serch {search}')
-    # docs = database.collection('Clothes').stream()
-    # docs = database.collection('Clothes').where(filter=FieldFilter("price","==","600")).stream()
-    # print(docs.to_dict())
-    
-    docs = database.collection("Products").where(filter=FieldFilter("UplodedProduct_data", "!=", " ")).stream()
-    print(docs  )
+    docs = database.collection("Laptop").get()
+    doc_t = "\n".join([str(doc) for doc in docs])
+    print(type(doc_t))
+    print(doc_t)
     # docs = database.collection("Seller").where(filter= FieldFilter("Email","==","1@g.com")).stream()
 
-    for doc in docs:
-        print(f"{doc.id} => {doc.to_dict()}")
-    
     # for doc in docs:
-    #     print(f'Document ID: {doc.id}')
-    #     print(f'Document Data: {doc.to_dict()}')
-        # print('\n\n\n')
+    #     print(f"{doc.id} => {doc.to_dict()}")
+    
     print('.....................................................')
     return render(request , "product_list.html",{'data':data,'docs':docs})

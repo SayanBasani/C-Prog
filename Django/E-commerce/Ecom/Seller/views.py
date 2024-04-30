@@ -43,7 +43,7 @@ def Seller_Singup(request):
     Email=request.POST.get('Email')
     password=request.POST.get('password')
     customer_data={
-        'Name':Name,'Mobile_number':Mobile_number,'Email':Email,'password':password,'Type':'Seller',
+        'Name':Name,'Mobile_number':Mobile_number,'Email':Email,'password':password,'Type':'Seller','product_count':0,
     }
     try:
         main_id="Sell"+Name[::2]+Mobile_number[::3]+Email[::4]
@@ -98,17 +98,25 @@ def sellerUplod(request ):
     print("you are in seler uplod page .////////////////////////////")
     data = request.session.get('data', {})
     email = data['Email']
+    productCount = int(data["product_count"])
     print('...............................................................................')
     print(data)
     print(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
     print(email)
+    print(f'your total uploded product {productCount}')
+    print(productCount+1)
+    customer_data = {"product_count":productCount+1}
+    data.update(customer_data)
+    print(data)
     print(',.,.,.,.,.,.,.')
+
     
     print(data)
     Name = request.POST.get('name')
     price = request.POST.get('price')
     descreption = request.POST.get('descreption')
-    UplodedProduct_data= {'Name':Name,'price':price,'descreption':descreption}
+    
+    UplodedProduct_data= {'Name':Name,'price':price,'descreption':descreption,'product_count':productCount+1}
     select_opt = request.POST.get('hidden_data')
     if(select_opt == 'Clothes' or select_opt == 'Shows'):
         # color,brand,size,faeric,desine,paterns,type,model , User ,waight
@@ -125,7 +133,7 @@ def sellerUplod(request ):
         option = select_opt
         product_data = {
             'color':color,'brand':brand,'size':size,'faeric':faeric,'desine':desine,'paterns':paterns,'type':type,'model':model,
-            'User':User,'waight':waight,"option":option
+            'User':User,'waight':waight,"option":option,'seller_id':data["main_id"],
         }
         UplodedProduct_data.update(product_data)
         # print(product_data)
@@ -211,15 +219,19 @@ def sellerUplod(request ):
     )
 
     if (select_opt == 'Clothes' or select_opt == 'Shows' or select_opt == 'Laptop' or select_opt == 'mobile' or select_opt == 'Gagets' or select_opt == 'Toys'):
-        ok=database.collection('Products').document(select_opt).collection('Products').document(Name).set({'UplodedProduct_data':UplodedProduct_data,'Seller_data':data,})
-        ok=database.collection(select_opt).document(Name).set({'UplodedProduct_data':UplodedProduct_data,'Seller_data':data,})
+        product_id="Pd"+Name[::3]+data['main_id'][::3]+str(productCount+1)
+        UplodedProduct_data.update({'product_id':product_id})
+        ok=database.collection('Products').document(select_opt).collection('Products').document(product_id).set(UplodedProduct_data)
+        ok=database.collection(select_opt).document(product_id).set(UplodedProduct_data)
+        ok=database.collection('Product').document(product_id).set(UplodedProduct_data)
         print(ok)
+        database.collection('Seller').document(data["Email"]).set(data)
     else :
         print("bal chal data push truy """"""""""""""""""""""""""""""""""""""")
     print("data uplod Succesfull")
     print(UplodedProduct_data)
     if Name != None:
-        return render(request,'UplodSuccesfull.html',{'Name':Name,'data':data})
+        return render(request,'UplodSuccesfull.html',{'Name':Name,'data':data,'product_id':product_id})
     else:
         print("It uploding not complit")
     return render(request,'sellerUplod.html',{'data':data})
