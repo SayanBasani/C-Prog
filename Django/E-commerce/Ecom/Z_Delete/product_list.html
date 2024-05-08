@@ -153,6 +153,13 @@
                     <option class="onclickSortBy_ops">Price -- High to Low</option>
                     <option class="onclickSortBy_ops">Newest First</option>
                 </select>
+                <script>
+                    onclickSortBy_ops_input = document.querySelector('.onclickSortBy');
+                    onclickSortBy_ops_input.addEventListener("click",()=>{
+                        let inputval=onclickSortBy_ops_input.value
+                        document.querySelector(".onclickSortBy_ops-input").value=inputval
+                    });
+                </script>
             </div>
 
             <div class="serch_option filter">
@@ -276,114 +283,75 @@
                 </div>
             </div>
         </div>
-        
-        <div class="productsArange" >
-            {%for product in products%}
-            <div class="productDitels">
-                <div class="productImg">
-                    <img src="" alt="" width="200px" height="200px" loading="lazy">
-                </div>
-                <div class="productData">
-                    <div class="productName">{{product.Name}}</div>
-                    <div class="productPrice">{{product.price}}</div>
-                    <div class="productReating">{{product.option}}</div>
-                </div>
-            </div>
-            {%endfor%}
+        <script>
+            filterOptions_h3 = document.querySelector(".filterOptions_h3");
+            filterOption = document.querySelectorAll(".filterOption");
+            filterOption.forEach((opt)=>{
+                opt.style.display='none'
+            })
+            filterOptions_h3.addEventListener('click',()=>{
+                filterOption.forEach(element => {
+                    console.log(element.style.display);
+                    if(element.style.display== ""){
+                        element.style.display="none";
+                    }
+                    else{
+                        element.style.display="";
+                    }
+                });
+            });
+            heads = document.querySelectorAll(".FO_H")
+            head_op = document.querySelectorAll(".filterOption")
+            heads.forEach((head, index) => {
+                head.addEventListener("click", () => {
+                    console.log("index is " + index)
+                    if (classls[0] == "filterOption") {
+                        head_op[index].classList.remove("filterOption");
+                        head_op[index].classList.add("filterOptions-style");
+                    }
+                    else if (classls[0] == "filterOptions-style") {
+                        head_op[index].classList.remove("filterOptions-style");
+                        head_op[index].classList.add("filterOption");
+                    }
+                })
+            });
+            all_op = document.querySelectorAll(".FO_");
+            cBox = document.querySelectorAll(".cbox");
+            console.log(cBox)
+            all_op.forEach((op, index) => {
+                op.addEventListener("click", () => {
+                    if (cBox[index].checked == false) {
+                        op.style.backgroundColor = "rgb(131, 187, 198)";
+                        cBox[index].checked = true;
+                    } else {
+                        op.style.backgroundColor = "rgb(186, 222, 226)";
+                        cBox[index].checked = false;
+                    }
+                });
+            });
+        </script>
+
+<div class="productsArange">
+    {%for product in products%}
+    <div class="productDitels">
+        <div class="productImg">
+            <img src="" alt="" width="200px" height="200px" loading="lazy">
+        </div>
+        <div class="productData">
+            <div class="productName">{{product.Name}}</div>
+            <div class="productPrice">{{product.price}}</div>
+            <div class="productReating">{{product.option}}</div>
         </div>
     </div>
-
-
-    <div class="product_hidden_data" hidden>{{products}}</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    {%endfor%}
     <script>
+        sortby=document.querySelector('.onclickSortBy').value
+        console.log(sortby)
+        sortby.foreach(element =>{
+            console.log(element)
 
-    $(document).ready(function(){
-        product_hidden_data=$(".product_hidden_data").text()
-        // console.log(typeof(product_hidden_data))
-        product_hidden_data=conv(product_hidden_data)
-        product_hidden_data=JSON.parse(product_hidden_data)
-        console.log(product_hidden_data)
-        console.log("ok try");
-        console.log(typeof(product_hidden_data))
-        console.log(product_hidden_data)
-    })
-    function conv(data) {
-        // console.log("Original data:", data);
-        let emptdata = '';
-        for (var i = 0; i < data.length; i++) {
-            if (data[i] === "'") {
-                emptdata += '"';
-            } else {
-                emptdata += data[i];
-            }
-        }
-        return emptdata;
-    }
-    </script>
-
-    <script>
-        onclickSortBy_ops_input = document.querySelector('.onclickSortBy');
-        onclickSortBy_ops_input.addEventListener("click",()=>{
-            let inputval=onclickSortBy_ops_input.value
-            document.querySelector(".onclickSortBy_ops-input").value=inputval
-        });
-
-
-        filterOptions_h3 = document.querySelector(".filterOptions_h3");
-        filterOption = document.querySelectorAll(".filterOption");
-        filterOption.forEach((opt)=>{
-            opt.style.display='none'
         })
-        filterOptions_h3.addEventListener('click',()=>{
-            filterOption.forEach(element => {
-                // console.log(element.style.display);
-                if(element.style.display== ""){
-                    element.style.display="none";
-                }
-                else{
-                    element.style.display="";
-                }
-            });
-        });
-        heads = document.querySelectorAll(".FO_H")
-        head_op = document.querySelectorAll(".filterOption")
-        heads.forEach((head, index) => {
-            head.addEventListener("click", () => {
-                // console.log("index is " + index)
-                if (classls[0] == "filterOption") {
-                    head_op[index].classList.remove("filterOption");
-                    head_op[index].classList.add("filterOptions-style");
-                }
-                else if (classls[0] == "filterOptions-style") {
-                    head_op[index].classList.remove("filterOptions-style");
-                    head_op[index].classList.add("filterOption");
-                }
-            })
-        });
-        all_op = document.querySelectorAll(".FO_");
-        cBox = document.querySelectorAll(".cbox");
-        // console.log(cBox)
-        all_op.forEach((op, index) => {
-            op.addEventListener("click", () => {
-                if (cBox[index].checked == false) {
-                    op.style.backgroundColor = "rgb(131, 187, 198)";
-                    cBox[index].checked = true;
-                } else {
-                    op.style.backgroundColor = "rgb(186, 222, 226)";
-                    cBox[index].checked = false;
-                }
-            });
-        });
-
-
-
-        // sortby=document.querySelector('.onclickSortBy').value
-        // console.log(sortby)
-        // sortby.forEach((element) =>{
-        //     console.log(element)
-
-        // })
     </script>
+</div>
+</div>
 {%endblock%}

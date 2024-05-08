@@ -98,9 +98,12 @@ def sellerUplod(request ):
     print("you are in seler uplod page .////////////////////////////")
     data = request.session.get('data', {})
     email = data['Email']
+    
     productCount = int(data["product_count"])
     print('...............................................................................')
     print(data)
+    sellerId=data["main_id"]
+    print(sellerId)
     print(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
     print(email)
     print(f'your total uploded product {productCount}')
@@ -217,13 +220,18 @@ def sellerUplod(request ):
         'name':'akash',
         'age':20,}
     )
-
+    import datetime
+    x=datetime.datetime.now()
+    x=str(x)
+    p_generated=x[5:10:1]+x[11:13:1]+x[20:27:1]
     if (select_opt == 'Clothes' or select_opt == 'Shows' or select_opt == 'Laptop' or select_opt == 'mobile' or select_opt == 'Gagets' or select_opt == 'Toys'):
-        product_id="Pd"+Name[::3]+data['main_id'][::3]+str(productCount+1)
+        # product_id="Pd"+Name[::3]+data['main_id'][::3]+str(productCount+1)+p_generated
+        product_id="Pd"+Name[::3]+str(productCount+1)+p_generated
         UplodedProduct_data.update({'product_id':product_id})
-        ok=database.collection('Products').document(select_opt).collection('Products').document(product_id).set(UplodedProduct_data)
+        UplodedProduct_data.update({'sellerId':sellerId})
+        ok=database.collection('products').document(select_opt).collection('Products').document(product_id).set(UplodedProduct_data)
         ok=database.collection(select_opt).document(product_id).set(UplodedProduct_data)
-        ok=database.collection('Product').document(product_id).set(UplodedProduct_data)
+        ok=database.collection('Products').document(product_id).set(UplodedProduct_data)
         print(ok)
         database.collection('Seller').document(data["Email"]).set(data)
     else :
@@ -242,3 +250,7 @@ def uplodSucessFull(request,Name):
     print(" after sucessfull uplod name is "+Name)
     seller_home_url = render('Seller:sellerHome')
     return render(request,'UplodSuccesfull.html',{'seller_home_url': seller_home_url})
+
+
+
+

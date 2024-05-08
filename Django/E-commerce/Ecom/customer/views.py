@@ -111,19 +111,24 @@ def cart(request):
 def order(request):
     return render(request , "order.html")
 def product_list(request):
-    data=request.session.get('data')
-    print(data)
+    datas=request.session.get('data')
+    print(datas)
     print('you are in produce list -------------------------------------------------------------')
     search = request.GET.get('search')
-    print(f'User serch {search}')
-    docs = database.collection("Laptop").get()
-    doc_t = "\n".join([str(doc) for doc in docs])
-    print(type(doc_t))
-    print(doc_t)
-    # docs = database.collection("Seller").where(filter= FieldFilter("Email","==","1@g.com")).stream()
-
-    # for doc in docs:
-    #     print(f"{doc.id} => {doc.to_dict()}")
-    
+    print(f'User search {search}')
+    docs = database.collection("Products").stream()
+    print(docs)
+    product = []
+    for doc in docs:
+        data = doc.to_dict()
+        for key, value in data.items():
+            if value == search:
+            # if value == "5":
+                print(f"{doc.id} => {doc.to_dict()} \n")
+                product.append(data)
+    print(type(product))
+    print(product)
     print('.....................................................')
-    return render(request , "product_list.html",{'data':data,'docs':docs})
+    print(data)
+    print(data['Name'])
+    return render(request , "product_list.html",{'data':datas,'products':product})
