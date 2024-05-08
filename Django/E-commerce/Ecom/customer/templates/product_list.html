@@ -23,7 +23,6 @@
         div {
             margin: 1px;
             padding: 1px;
-            /* border: 1px solid black; */
         }
 
         body {
@@ -136,6 +135,63 @@
         .FO_ {
             padding-inline: 3px;
         }
+
+
+
+        /* CSS styles for product display */
+        .productDitels {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .productImg img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+        div{
+            <!-- border: 1px solid black; -->
+        }
+        .productDitels {
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 2rem;
+        background-color: white;
+        border-radius: 10px; /* Adding border radius */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adding box shadow */
+    }
+    
+    .productImg img {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px; /* Adding border radius to the image */
+        object-fit: cover; /* Ensuring the image fills the container */
+    }
+    
+    .productData {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px; /* Adjusting padding */
+    }
+    
+    .productName {
+        font-weight: bold; /* Making product name bold */
+        font-size: 1.2rem; /* Adjusting font size */
+    }
+    
+    .productPrice {
+        font-size: 1.1rem; /* Adjusting font size */
+        color: green; /* Changing price color */
+    }
+    
+    .productReating {
+        font-size: 1rem; /* Adjusting font size */
+        color: #f1c40f; /* Changing rating color */
+    }
+    
+
+
     {% endblock %}
 {%block content %}
     <div class="product_list_content">
@@ -151,7 +207,7 @@
                     <option class="onclickSortBy_ops">Popularity</option>
                     <option class="onclickSortBy_ops">Price -- Low to High</option>
                     <option class="onclickSortBy_ops">Price -- High to Low</option>
-                    <option class="onclickSortBy_ops">Newest First</option>
+                    <!-- <option class="onclickSortBy_ops">Newest First</option> -->
                 </select>
             </div>
 
@@ -298,17 +354,76 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
+    // Function to generate HTML for each product and insert into the page
+    function renderProducts(products) {
+        // remove the present divs whis contens ditels of all serched product 
+        remdiv = document.querySelectorAll('.productDitels')
+        remdiv.forEach(function(div) {
+            div.remove();
+        })
+        var productContainer = document.querySelector('.productsArange');
 
-    $(document).ready(function(){
-        product_hidden_data=$(".product_hidden_data").text()
-        // console.log(typeof(product_hidden_data))
-        product_hidden_data=conv(product_hidden_data)
-        product_hidden_data=JSON.parse(product_hidden_data)
+        // Clear existing content
+        productContainer.innerHTML = '';
+
+        // Iterate through products and generate HTML
+        products.forEach(function(product) {
+            var productDiv = document.createElement('div');
+            productDiv.className = 'productDitels';
+
+            var productImgDiv = document.createElement('div');
+            productImgDiv.className = 'productImg';
+            var img = document.createElement('img');
+            img.src = ''; // Add your image source here
+            img.alt = 'Product Image';
+            img.width = '200';
+            img.height = '200';
+            img.loading = 'lazy';
+            productImgDiv.appendChild(img);
+
+            var productDataDiv = document.createElement('div');
+            productDataDiv.className = 'productData';
+            var productNameDiv = document.createElement('div');
+            productNameDiv.className = 'productName';
+            productNameDiv.textContent = product.Name;
+            var productPriceDiv = document.createElement('div');
+            productPriceDiv.className = 'productPrice';
+            productPriceDiv.textContent = product.price;
+            var productReatingDiv = document.createElement('div');
+            productReatingDiv.className = 'productReating';
+            productReatingDiv.textContent = product.option;
+
+            productDataDiv.appendChild(productNameDiv);
+            productDataDiv.appendChild(productPriceDiv);
+            productDataDiv.appendChild(productReatingDiv);
+
+            productDiv.appendChild(productImgDiv);
+            productDiv.appendChild(productDataDiv);
+
+            productContainer.appendChild(productDiv);
+        });
+    }
+
+    // this is use to change the data from string to json
+    function get_pyJson_to_jsJson(callback){
+        $(document).ready(function(){
+            var product_hidden_data=$(".product_hidden_data").text()
+            product_hidden_data=conv(product_hidden_data)
+            product_hidden_data=JSON.parse(product_hidden_data.replace(/None/g, 'null'))
+            console.log("before print json")
+            // console.log(product_hidden_data)
+            console.log("after print json")
+            count = 0 
+            // callback(product_hidden_data);
+        });
         console.log(product_hidden_data)
-        console.log("ok try");
-        console.log(typeof(product_hidden_data))
-        console.log(product_hidden_data)
-    })
+    }
+    
+    var product_hidden_data=$(".product_hidden_data").text()
+    product_hidden_data=conv(product_hidden_data)
+    product_hidden_data=JSON.parse(product_hidden_data.replace(/None/g, 'null'))
+
+    // this is use to convert ' to " for py json and js json
     function conv(data) {
         // console.log("Original data:", data);
         let emptdata = '';
@@ -321,6 +436,7 @@
         }
         return emptdata;
     }
+    
     </script>
 
     <script>
@@ -328,6 +444,24 @@
         onclickSortBy_ops_input.addEventListener("click",()=>{
             let inputval=onclickSortBy_ops_input.value
             document.querySelector(".onclickSortBy_ops-input").value=inputval
+            if(inputval == "Price -- Low to High"){
+                // it is rearrange this jsons "price" low to high 
+                console.log("let for next ok")
+                console.log(product_hidden_data);
+                console.log("let for next ok ........... ")
+                product_hidden_data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+                console.log(product_hidden_data)
+                renderProducts(product_hidden_data)
+
+            }
+            else if(inputval == "Price -- High to Low"){
+                // it is rearrange this jsons "price" high to low
+                console.log("let for next ok")
+                console.log(product_hidden_data);
+                console.log("let for next ok ........... ")
+                product_hidden_data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+                renderProducts(product_hidden_data)
+            }
         });
 
 
