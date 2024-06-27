@@ -9,8 +9,8 @@ auth_response = requests.post(auth_url, {
 auth_data = auth_response.json()
 access_token = auth_data['access_token']
 
-# Make the search request
-search_url = 'https://api.spotify.com/v1/search'
+# Make the search request   
+search_url = 'https://api.spotify.com/v1/tracks'
 headers = {
     'Authorization': f'Bearer {access_token}'
 }

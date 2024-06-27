@@ -13,7 +13,10 @@ headers = {
 response = requests.get(url, headers=headers, params=querystring)
 
 data = response.json()
-# print(data)
+print("\n")
+print(data)
+print("\n\n\n")
+print(data)
 print("\n\n\n")
 ydata = data['videos'][0]
 ykey = data['videos'][0]['video_id']

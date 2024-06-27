@@ -8,7 +8,7 @@ querystring = {"query":surl}
 headers = {
 	"X-RapidAPI-Key": "67512a51a5msh77cb1f629731743p1fd608jsne6f95d1f415b",
 	"X-RapidAPI-Host": "youtube-v2.p.rapidapi.com",
-  "content-type": "application/json",
+    "content-type": "application/json",
 }
 response = requests.get(url, headers=headers, params=querystring)
 
@@ -16,8 +16,7 @@ data = response.json()
 ydata = data['videos'][0]
 ykey = data['videos'][0]['video_id']
 vlink = "https://www.youtube.com/watch?v="+ykey
-# print(vlink)
-
+print(vlink)
 
 import yt_dlp
 
@@ -38,7 +37,11 @@ def get_audio_stream_url(video_id):
 
 # Use the video ID from Step 1
 audio_url = get_audio_stream_url(ykey)
+
+# print("Audio Stream URL:", audio_url)
+print("\n\n")
 print("Audio Stream URL:", audio_url)
 
-
-print(audio_url)
+import webbrowser
+if audio_url != " ":
+    webbrowser.open(audio_url)
