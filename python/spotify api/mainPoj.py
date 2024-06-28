@@ -23,6 +23,7 @@ def cho():
     choise = int(input("Enter according our choise :- "))
     
     if choise != 15:
+        print(f'Your choose is {emotions[choise-1]}')
         return emotions[choise-1]
     else:
         search = input("enter your search :- ")
@@ -34,7 +35,7 @@ import requests
 url = "https://youtube-v2.p.rapidapi.com/search/"
 # surl=input("Enter your serch quary :- ")
 surl=cho()
-surl = surl + " song best for mood"
+surl = surl + " song hindi"
 querystring = {"query":surl}
 
 headers = {
