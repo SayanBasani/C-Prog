@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Product Display</title>
+<style>
+    /* CSS styles for product display */
+    .productDitels {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .productImg img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    div{
+        border: 1px solid black;
+    }
+    .productDitels {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 10px; /* Adding border radius */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adding box shadow */
+}
+
+.productImg img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px; /* Adding border radius to the image */
+    object-fit: cover; /* Ensuring the image fills the container */
+}
+
+.productData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; /* Adjusting padding */
+}
+
+.productName {
+    font-weight: bold; /* Making product name bold */
+    font-size: 1.2rem; /* Adjusting font size */
+}
+
+.productPrice {
+    font-size: 1.1rem; /* Adjusting font size */
+    color: green; /* Changing price color */
+}
+
+.productReating {
+    font-size: 1rem; /* Adjusting font size */
+    color: #f1c40f; /* Changing rating color */
+}
+
+</style>
+</head>
+<body>
+
+<div id="productContainer">
+    <!-- Products will be dynamically inserted here -->
+</div>
+
+<script>
+    // Function to generate HTML for each product and insert into the page
+    function renderProducts(products) {
+        var productContainer = document.getElementById('productContainer');
+
+        // Clear existing content
+        productContainer.innerHTML = '';
+
+        // Iterate through products and generate HTML
+        products.forEach(function(product) {
+            var productDiv = document.createElement('div');
+            productDiv.className = 'productDitels';
+
+            var productImgDiv = document.createElement('div');
+            productImgDiv.className = 'productImg';
+            var img = document.createElement('img');
+            img.src = ''; // Add your image source here
+            img.alt = 'Product Image';
+            img.width = '200';
+            img.height = '200';
+            img.loading = 'lazy';
+            productImgDiv.appendChild(img);
+
+            var productDataDiv = document.createElement('div');
+            productDataDiv.className = 'productData';
+            var productNameDiv = document.createElement('div');
+            productNameDiv.className = 'productName';
+            productNameDiv.textContent = product.Name;
+            var productPriceDiv = document.createElement('div');
+            productPriceDiv.className = 'productPrice';
+            productPriceDiv.textContent = product.price;
+            var productReatingDiv = document.createElement('div');
+            productReatingDiv.className = 'productReating';
+            productReatingDiv.textContent = product.option;
+
+            productDataDiv.appendChild(productNameDiv);
+            productDataDiv.appendChild(productPriceDiv);
+            productDataDiv.appendChild(productReatingDiv);
+
+            productDiv.appendChild(productImgDiv);
+            productDiv.appendChild(productDataDiv);
+
+            productContainer.appendChild(productDiv);
+        });
+    }
+
+    // Example JSON data
+    var productsJSON = '[{"Name":"Product 1","price":"$10","option":"Option A"},{"Name":"Product 2","price":"$20","option":"Option B"},{"Name":"Product 3","price":"$30","option":"Option C"},{"Name":"Product 3","price":"$30","option":"Option C"}]';
+
+    // Convert JSON string to JavaScript object
+    var products = JSON.parse(productsJSON);
+
+    // Call the function to initially render products
+    renderProducts(products);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        @layer base {
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+        }
+    </style>
+</head>
+<body class="text-[20px]">
+    <div class="grid grid-flow-col justify-center items-center h-screen bg-slate-950 w-100 rounded-md">
+        <div class="w-[390px]  bg-indigo-700 rounded-lg h-[590px] p-5">
+            <div class="grid justify-center  h-min pb-4">
+                <h2 class="text-3xl font-bold">summary</h2>
+            </div>
+            <div class=" grid content-center justify-center gap-5">
+                <div class="flex gap-24">
+                    <p>shepping tax</p> 
+                    <select name="" id="" class="rounded-[10px] flex text-center">
+                        <option value="">sayan</option>
+                        <option value="">rony</option>
+                        <option value="">anish</option>
+                        <option value="">soumya</option>
+                        <option value="">aju</option>
+                    </select>
+                </div>
+                <div class="border-[.5px] "></div>
+                <div class="grid gap-2">
+                    <div class="grid grid-cols-2 gap-32">
+                        <p>subtotal</p>
+                        <p>$100</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-32">
+                        <p>tax</p>
+                        <p>$100</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-32">
+                        <p>order total</p>
+                        <p>$100</p>
+                    </div>
+                </div>
+                <div class="border-[.5px] "></div>
+                <div class="grid gap-3">
+                    <p>apply cuppon</p>
+                    <div class="rounded-[80px] bg-white">
+                        <input type="text" class="p-[9px] rounded-l-[80px] w-[70%]">
+                        <button type="submit" class="bg-teal-500 p-[9px] rounded-r-[80px] w-[28%]">ok</button>
+                    </div>
+                    <button class="bg-teal-500 p-[10px] rounded-[80px]">process to check out</button>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <p class="text-[25px] font-bold">or</p>
+            </div>
+            <div class="grid grid-cols-2 justify-center gap-2">
+                <div class="hover:border-white grid justify-center dark:md:hover:bg-fuchsia-600">paytm</div>
+                <button class="dark:md:hover:bg-fuchsia-600 grid justify-center">gpay</button>
+                <div class="hover:border-white grid justify-center">crypto</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,7 +3,9 @@ from . import views
 app_name='homepage'
 urlpatterns = [
     path('',views.HomePage,name='HomePage'),
-    path('nav',views.nav),
-    path('nav1',views.nav1),
-    path('product',views.product),
+    # path('nav/',views.nav),
+    # path('nav1',views.nav1),
+    # path('product',views.product),
+    path("ok/",views.ok),
+    path("oks/",views.oks),
 ]

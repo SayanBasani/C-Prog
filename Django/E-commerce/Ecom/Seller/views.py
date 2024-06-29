@@ -65,6 +65,7 @@ def Seller_login(request):
     # password='123456'
     print(f'{email} {password}')
     data=database.collection('Seller').document(email).get().to_dict()
+    print(data)
     
     if data  : 
         if(data["Email"] == email and data["password"]==password ):
@@ -252,5 +253,17 @@ def uplodSucessFull(request,Name):
     return render(request,'UplodSuccesfull.html',{'seller_home_url': seller_home_url})
 
 
+from firebase import storage
 
-
+def upload_image_to_firebase(image_file):
+    # Initialize Firebase Admin SDK
+    # Make sure you have set up Firebase Admin SDK and initialized it properly
+    
+    # Upload image to Firebase Storage
+    bucket = storage.bucket()
+    blob = bucket.blob("images/" + image_file.name)
+    blob.upload_from_string(image_file.read(), content_type=image_file.content_type)
+    # Get public URL of the uploaded image
+    return blob.public_url
+# path = "C:\Users\sayan\Pictures\Screenshots\Screenshot 2024-04-27 200632.png"
+# upload_image_to_firebase(path)
