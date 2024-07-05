@@ -1,30 +1,32 @@
 from django.shortcuts import render,redirect
 from django.urls import reverse
 import firebase,pyrebase,firebase_admin
-from firebase_admin import credentials , firestore
+from firebase_admin import credentials , firestore,storage
 import json
 
 firebaseConfig = {
-  'apiKey': "AIzaSyA1l6YTxtr8Xx7KcdPytaKs2YsGblMMNJk",
-  'authDomain': "e-commers-web-page.firebaseapp.com",
-  'projectId': "e-commers-web-page",
-  'storageBucket': "e-commers-web-page.appspot.com",
-  'messagingSenderId': "620595830414",
-  'appId': "1:620595830414:web:9456fb464b28906f7d73df",
-  'measurementId': "G-XQFMT37DGZ",
-  'databaseURL':" ",
+    "apiKey": "AIzaSyAvOY6_emeY0ZsdhA1s8x2NG0wNF7riYgw",
+    "authDomain": "e-commers-web-page2.firebaseapp.com",
+    "projectId": "e-commers-web-page2",
+    "storageBucket": "e-commers-web-page2.appspot.com",
+    "messagingSenderId": "852097607313",
+    "appId": "1:852097607313:web:20cb7cf9bebe7e493c8130",
+    "measurementId": "G-9FHK9WTB15",
+    'databaseURL':" ",
 }
+firebase = pyrebase.initialize_app(firebaseConfig)
+auth = firebase.auth()
 service={
   "type": "service_account",
-  "project_id": "e-commers-web-page",
-  "private_key_id": "cd7097f68e100d1f20e677f5d52d434852f1fd8e",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDUvkUac1UUrBwm\nqxjLN8boYw6mJNKscNvC1uQ3ZWgzw2tabLKeWjHGJFULaJFocRqc3qi90qI4OG0u\n7ejg/UJFz05GrWHo/+J4+RoHH2Y0aO1CoOIawzW3ar5bbU0YUiDI5f1XG7doU/1t\nbhVZlcYTjoCEtHyepZO8hU4wIVGycp1x+uenrQO5geYWBeNAiLB4udTkOeaiA6HE\nK5X8gVY87OYJldzQSSB2PiwFczMYwShvuS/+qi2IjhxBjUapFLGyr64BGfDWWAll\nki/PQE6Ex+oqXQBYHk/1Zn9YUkh13H1UFWKfhoVh7GH2FBgLs5kefoCh5aasdJIA\nFSQ2vrxdAgMBAAECggEABlpMK/cHsl9VU95GFkNrICNdG57734RbO505IWJY0zrh\nqMiYKNxeoiERnQ6ZUPoXplmLxmdUysL8l6spChbl9Lm1B61DwDZr59rgaRgJ8ES1\n2Qh+1/e+UeTRHF/OLoy9R+J+RyyftHDVn3/rCUrMqGbX9Z6CHiapm7aLWCqWivKN\nSjDaIqGx3URL6crhRC0Hnb5ba4P5PgwObKvk8CdCeHdHbWmTzJQblkRbdLpnZaz4\nv2nUW6zEj8Ey5/dXRwVkWlzfcRwxhOgZ1FOu6slqpN5DqyAGiTUNHwVtCdgEMw0o\nUhhhH/VzY5cb4eRjeUmTyrZ80JoRLH2m+/eqET/q4QKBgQDubhPlimuJda5BR0MP\n2aZBVunSZaKNEz8P8yhLOhxTAvNDP5qmH7+7L19iQsgZEmSQHp6tZfI9hkzlvMKt\nOKJDcKSFB1Gdj4y6w5CBkFx7sBxduFXodzHyP5o71HrYq7VCaV/2CRxDkZzA+aNg\nSRo+CPujdvgP2cZ7GNvzLMYX5QKBgQDka5473r/oi32tKwLJD3aKgGS43R38zxao\ne4z1M6b9xKtLDd9Sqb8jTF8mwcVg6jBTMox6ShVwAYBPFwHms7pUIKgpG9dqz0gB\nh0D2QwhDjcggV+e+HF28zSRK75+0dRQVNbQWVoDXlrA8yJpmLPFh2SuLAXnZdt9X\n9314mshbGQKBgQDT2Zz2LHqGZbjSKbZtg+8USVxy5Hl9LievTVd1GAoIvCtXilEn\n4Dfk4x+2WC4hENWntH07BsUpY4Y57vFvJk4O7CxSQwGCpQTfAVsJtDJoeD+MCnjS\nl+4aF+c71/zbPh5NBwILw2aIpv4H/QfsSqf1jNfCE7gvpUmVIK52MEdG/QKBgQDY\nEl0qMTnEFj+aEXefDfuKZI3iuXfmb1b1pXnfcS7kGqgWZVb9cQkXsOTJWr8FQELa\nUJTGEVJaE3F2X0MzIox9jC7GREnwBYgNug3fZeVpUbMftUfIdDjPohZUtHuUTrPi\npFxoTQev6CFqPjCfup/TeYVRBuJmraX0Jm8QKQqh8QKBgD+kIN8OJupy+OmFtgI4\nVYPQb4Jua6pCYJZOS6G4TloXdbchMejn67O0VB/k3s3JBG3neoD72n/RiX/Hno3U\nQxrxUYJw6r53tMSv4oDui7hS4dnJ7PNVdH+Wi1WGP+CC2BFi2qtnfpDhxgtk/1F0\nWBnLvrTbyQ+Z5xtf6GVIxe+S\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-1uno3@e-commers-web-page.iam.gserviceaccount.com",
-  "client_id": "110276546586494629783",
+  "project_id": "e-commers-web-page2",
+  "private_key_id": "5fef07ff64a8f4dcb3080ad4f22c34b9b4a23e49",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC9GeLgY7QQN/RI\n2uE5KiRsUgbksig0uxNr0mEZR/Sus9oiafu7mSM4PGbvpSYrZDeGQPnud3/ofd1b\nRfA4kw7ys9pFTQWCTQb+GNTieAVXc5dYnVpl9jS97P62xKsvG6f/Cs08+FHn+zNx\nZmy7SSDxXu/3fN9DtBf4qtTQ4QgqM3AELW4zWzDeuMnqChgzSkbc89H3u2Z/ibTl\ncz2Y2cmjqi6/5rGdRx31jK0os5hiXCZ6r+j5uVGADVLMII6FpO1QfdrnY1nELTTO\nNkGI0U768Z/raHtw6hgFOat1RzQRhj5c1D/AiFK4UOsZoBNZ1lwgxXjXZceZw9WE\nWxZyAg7fAgMBAAECggEACgB1gd15fPtzU0B9yx08gfIwuns7KdbUkc5geQrXmT9F\nWVlLtEIcR8bXbEjK5QlO79iTSkFN0Ek1TQo883EWcvsqSfdnRDC4yaBx72yJCSAX\nBYaFF9bW4U4eBs1jfywHowi6OZr/Z2AKT4QrBMOQbNPS/hRqZqqpiJXYiG0ZQR9n\nMAeiEyYjWkrFuSymitypGnVpHntNGGKz407NrX/llidtzxiRNMP7y72EcO5MWJpN\nlG3/coWhYeArEdqQkjPF5O/iDo4KkSNc5N83MP/Fa5D+YlhUKQAtEm5LMtIuwqvQ\neoXz39ceN4Bks8e+SXyKCJOWXtfWa9trHmTaXZqHEQKBgQD9UrRMdSik60FE3gW5\nDWPsjuLWr7o3bmiBT5Q0WqEcphOM12M3vKuQfP1cXPF8eV0GfviPi2p3h6DrNTUG\n8IdPxrSJpVmQ4/D9mv1ZHYqQQelVsO0IBOLKKrMNud/2Qqcm0RqO91wRkhjelU8K\nwD6E+Ti+WLaubHxK2i8muMzNOQKBgQC/GXJ6L57NmXSD5NKXQ2bJP5PnxHDhl+b1\n1+TruoXxyx7xlO7iuXOOed21shOZEvicxAmU6xCmQqeQrMhxS8dSsnJeMv1RsCl0\nW5yngsOyyGmbil0JBjvh3CXx6pE+4KCsxz5su6iFS3H1nAotwXyZdDArbxXoPBYp\nBRyXuwNU1wKBgQD5B1arWvlLtuGA++oQUvOKV6Tze+jKGUWu6TY+iWGcsj7B0/N7\nlYPrFJRVOiFDRmOGwUdEhb9yJeixkKrCWa4LZMGSFvSHlS0Rgk3QT1QqIEFrtfQu\nT+9K4tMGiVV712ZOqH09Ujo2I7NDDPCZFwfe3MlFhhyAN7GwO/DiVgUvMQKBgGwW\nLJXHkX6gqTJgnmxIBz8U4sdYaLBwhoXO0wAxw8j7Jkll/6flVOLlMu2uBz+xZ0Tj\n7Ld6LTScxsIhuE28msS/gcid9oHZrdjOaFCmuaHJkVIUdILCL+ST7DJkhjqWOsr+\n9uPxUGP0RESzOV6f7aWt/gDTGAT+11nkNkPr1vqJAoGBAOtcbFKAQC324uD0cPS+\n+ytr4LKpBb87WScwBZAXfNkqmx53dmA2WLCnKPxAdZEXQthYmMlbrx6DnKlDwBEV\nLCUJ75gL19oDh49MoDNQQW5rF8GsVvjwVjsVR55YdL6OVntg5cMg9d/WJjU6ypvy\n0FAmm0Cxwco98B7IiYy3XWkN\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-9cgxk@e-commers-web-page2.iam.gserviceaccount.com",
+  "client_id": "114862640897417925426",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1uno3%40e-commers-web-page.iam.gserviceaccount.com",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-9cgxk%40e-commers-web-page2.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
 
@@ -33,7 +35,7 @@ cred = credentials.Certificate(service)
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 database = firestore.client()
-
+storage = firebase.storage()
 def HomePage(request):
     return render(request,'SellerHom.html')
 
@@ -42,36 +44,40 @@ def Seller_Singup(request):
     Mobile_number=request.POST.get('Mobile_number')
     Email=request.POST.get('Email')
     password=request.POST.get('password')
-    customer_data={
+    s_data={
         'Name':Name,'Mobile_number':Mobile_number,'Email':Email,'password':password,'Type':'Seller','product_count':0,
     }
     try:
         main_id="Sell"+Name[::2]+Mobile_number[::3]+Email[::4]
-        customer_data['main_id']=main_id
-        database.collection('Seller').document(Email).set(customer_data)
+        s_data['main_id']=main_id
+        database.collection('Seller').document(Email).set(s_data)
         print(f'Seller account oppen & data uplod complet of {Name}')
-        return render(request,'Seller-login_page.html',{ "data" :customer_data })
+        return render(request,'Seller-login_page.html',{ "data" :s_data })
     except:
         print("Account cant't open")
     return render(request,'Seller-Singup.html')
 
 
 def Seller_login(request):
-    data = None
-    request.session['data'] = data
+    s_data = None
+    request.session['s_data'] = s_data
     print("you are in seler login page .////////////////////////////")
     email = request.POST.get('email')
     password = request.POST.get('password')
     # password='123456'
     print(f'{email} {password}')
-    data=database.collection('Seller').document(email).get().to_dict()
-    print(data)
+    s_data=database.collection('Seller').document(email).get().to_dict()
+    print(s_data)
     
-    if data  : 
-        if(data["Email"] == email and data["password"]==password ):
-            print(data)
+    if s_data  : 
+        if(s_data["Email"] == email and s_data["password"]==password and s_data["Type"]=="Seller"):
+            page_T={
+                'page_T':"Seller"
+            }
+            s_data.update(page_T)
+            print(s_data)
             print("Seller sucess to sign up")
-            request.session['data'] = data
+            request.session['s_data'] = s_data
             return redirect('Seller:sellerHome')
     else:
         print(f"fail to sign in: {email}")
@@ -85,43 +91,69 @@ def logout(request):
 
 def sellerHome(request):
     print("you are in seler home page .////////////////////////////")
-    data = request.session.get('data', {})
-    if data == None or data == {}:
+    s_data = request.session.get('s_data', {})
+    
+    if s_data == None or s_data == {}:
         return redirect('Seller:Seller_login')
     else:
         print("..................................................")
-        print(data)
+        print(s_data)
         print("..................................................")
-        request.session['data'] = data
-    return render(request,"sellerHome.html",{'data':data})
+        request.session['s_data'] = s_data
+    return render(request,"sellerHome.html",{'s_data':s_data})
 
 def sellerUplod(request ):
     print("you are in seler uplod page .////////////////////////////")
-    data = request.session.get('data', {})
-    email = data['Email']
+    s_data = request.session.get('s_data', {})
+    email = s_data['Email']
     
-    productCount = int(data["product_count"])
+    productCount = int(s_data["product_count"])
     print('...............................................................................')
-    print(data)
-    sellerId=data["main_id"]
-    print(sellerId)
-    print(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
-    print(email)
-    print(f'your total uploded product {productCount}')
-    print(productCount+1)
+    print(s_data)
+    sellerId=s_data["main_id"]
+    # print(f'{sellerId}  {email}')
+    # print(f'your total uploded product {productCount}')
+    # print(productCount+1)
     customer_data = {"product_count":productCount+1}
-    data.update(customer_data)
-    print(data)
-    print(',.,.,.,.,.,.,.')
+    s_data.update(customer_data)
+    # print(s_data)
+    # print(',.,.,.,.,.,.,.')
 
     
-    print(data)
+    # print(s_data)
     Name = request.POST.get('name')
     price = request.POST.get('price')
     descreption = request.POST.get('descreption')
-    
-    UplodedProduct_data= {'Name':Name,'price':price,'descreption':descreption,'product_count':productCount+1}
     select_opt = request.POST.get('hidden_data')
+    
+    # generate unique name for product 
+    import datetime
+    x=datetime.datetime.now()
+    x=str(x)
+    p_generated=x[5:10:1]+x[11:13:1]+x[20:27:1]
+    product_id=""
+    if Name:
+        product_id="Pd"+Name[::3]+str(productCount+1)+p_generated
+    print(f'name is {Name}')
+    # product_id is the name 
+    path = request.POST.get('image')
+    if path:
+        path  = path.replace("\\","\\\\",1000)
+        path = path.replace('"','',1000)
+        print(f'the modefied path after replace is : {path}')
+    print(f'the modefied path is : {path}')
+    # this line is help to uplod image
+    if path:
+        if storage.child(str(select_opt)).child(f'{select_opt}{product_id}').put(path) :
+            # storage.child(str(select_opt)).child(f'{select_opt}{product_id}').put(path)
+            print("uplode is succes full ...........///////////..............")
+        else :
+            return render(request,'sellerUplod.html',{'s_data':s_data})
+    url = storage.child(str(select_opt)).child(f'{select_opt}{product_id}').get_url(firebaseConfig['storageBucket'])
+    r_url = str(url)   
+     
+    print(f'uploded image link is : {r_url}')
+    UplodedProduct_data= {'Name':Name,'price':price,'descreption':descreption,'product_count':productCount+1,'ProductImg':r_url}
     if(select_opt == 'Clothes' or select_opt == 'Shows'):
         # color,brand,size,faeric,desine,paterns,type,model , User ,waight
         color = request.POST.get('color')
@@ -137,7 +169,7 @@ def sellerUplod(request ):
         option = select_opt
         product_data = {
             'color':color,'brand':brand,'size':size,'faeric':faeric,'desine':desine,'paterns':paterns,'type':type,'model':model,
-            'User':User,'waight':waight,"option":option,'seller_id':data["main_id"],
+            'User':User,'waight':waight,"option":option,'seller_id':s_data["main_id"],
         }
         UplodedProduct_data.update(product_data)
         # print(product_data)
@@ -217,33 +249,26 @@ def sellerUplod(request ):
         UplodedProduct_data.update(product_data)
         print(product_data)
     
-    database.collection('ok').document('1').set({
-        'name':'akash',
-        'age':20,}
-    )
-    import datetime
-    x=datetime.datetime.now()
-    x=str(x)
-    p_generated=x[5:10:1]+x[11:13:1]+x[20:27:1]
+    
     if (select_opt == 'Clothes' or select_opt == 'Shows' or select_opt == 'Laptop' or select_opt == 'mobile' or select_opt == 'Gagets' or select_opt == 'Toys'):
         # product_id="Pd"+Name[::3]+data['main_id'][::3]+str(productCount+1)+p_generated
-        product_id="Pd"+Name[::3]+str(productCount+1)+p_generated
+        
         UplodedProduct_data.update({'product_id':product_id})
         UplodedProduct_data.update({'sellerId':sellerId})
         ok=database.collection('products').document(select_opt).collection('Products').document(product_id).set(UplodedProduct_data)
         ok=database.collection(select_opt).document(product_id).set(UplodedProduct_data)
         ok=database.collection('Products').document(product_id).set(UplodedProduct_data)
         print(ok)
-        database.collection('Seller').document(data["Email"]).set(data)
+        database.collection('Seller').document(s_data["Email"]).set(s_data)
     else :
         print("bal chal data push truy """"""""""""""""""""""""""""""""""""""")
     print("data uplod Succesfull")
     print(UplodedProduct_data)
     if Name != None:
-        return render(request,'UplodSuccesfull.html',{'Name':Name,'data':data,'product_id':product_id})
+        return render(request,'UplodSuccesfull.html',{'Name':Name,'s_data':s_data,'product_id':product_id})
     else:
         print("It uploding not complit")
-    return render(request,'sellerUplod.html',{'data':data})
+    return render(request,'sellerUplod.html',{'s_data':s_data})
 
 
 def uplodSucessFull(request,Name):
@@ -253,7 +278,7 @@ def uplodSucessFull(request,Name):
     return render(request,'UplodSuccesfull.html',{'seller_home_url': seller_home_url})
 
 
-from firebase import storage
+# from firebase import storage
 
 def upload_image_to_firebase(image_file):
     # Initialize Firebase Admin SDK
@@ -265,5 +290,7 @@ def upload_image_to_firebase(image_file):
     blob.upload_from_string(image_file.read(), content_type=image_file.content_type)
     # Get public URL of the uploaded image
     return blob.public_url
-# path = "C:\Users\sayan\Pictures\Screenshots\Screenshot 2024-04-27 200632.png"
-# upload_image_to_firebase(path)
+    # path = "C:\\Users\\sayan\\Pictures\\Screenshots\\Screenshot 2024-04-27 200632.png"
+    # path = "C:\Users\sayan\Pictures\Wallpaper\surgery-1807541.jpg"
+    # upload_image_to_firebase(path)
+    # storage.child("ok").child(f'sayan').put(path)

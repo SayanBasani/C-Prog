@@ -121,7 +121,7 @@
     {%endblock style%}
 {% block content %}
 
-    {% if data %}
+    {% if s_data %}
         <div class="seller_uplode">
             <div class="sellerManue"></div>
             <div class="sellerManue" style="position: fixed;">
@@ -137,8 +137,35 @@
                 <div class="sellerContents">
                     <div class="productCommonDet">
                         <div class="productImg">
-                            <input type="file" id="imageInput" name="image" accept="image/*" onchange="previewImage(event)" class="productImg_path">
+                            <input type="file" id="imageInput" name="inp_img" accept="image/*" onchange="previewImage(event)" class="productImg_path">
+                            <label for="">Enter the path of the image</label>
+                            <input type="text" name="image" class="changeVal"> <!-- style="display: none;" -->
                             <img id="imagePreview" src="#" alt="Selected Image" style="display: none;max-height: 200px; max-width: 200px; overflow: hidden;">
+
+
+                            <script>
+                                inputData = document.querySelector('.productImg_path')
+                                changeVal = document.querySelector('.changeVal')
+                                inputData.addEventListener('change',()=>{
+                                console.log(inputData.value)
+                                changeVal.value=inputData.value
+
+                                img = document.querySelector('#imagePreview');
+                                inputData.addEventListener('change', function (event) {
+                                    console.log(inputData.value)
+                                    var reader = new FileReader();
+
+                                    reader.onload = function (e) {
+                                        document.getElementById('img').src = e.target.result;
+                                    };
+
+                                    reader.readAsDataURL(event.target.files[0]);
+                                    console.log(reader)
+                                });
+
+
+                            })
+                            </script>
                         </div>
                         <div class="productDet">
                             <div class="productName"><input name="name" class="productInput" type="text" placeholder="    Enter the name of product"></div>
@@ -368,7 +395,7 @@
             </form>
         </div>
     {% else %}
-        no data found
+        no s_data found
         <div></div>
         <a href="{% url 'Seller:Seller_login'%}">Try to login</a>
         <div></div>

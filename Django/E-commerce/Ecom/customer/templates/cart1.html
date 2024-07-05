@@ -61,7 +61,7 @@
             display: flex;
         }
         .cart_items_details > .details > .text_img{
-            width: 160px;
+            width: 100px;
             /* height: 100px; */
             overflow: hidden;
         }
@@ -89,6 +89,14 @@
             margin-left: 50px;
             height: 25px;
             border-radius: 3px;
+        }
+        /* cart price detiels sections css */
+        .cart_price_detiels {
+            /* border: 1px solid black ; */
+            /* display: inline-block; */
+        }
+        .cart_price_detiels > .delivery_det{
+            /* border: 1px solid red; */
         }
 
         /* add new address */
@@ -173,27 +181,35 @@
                     <div class="">You have total 0 items</div>
                 </div>
                 <!-- this for indevisual items and it have iterat -->
-                <div class="cart_items_details" style="width: 100%;">
+                <div class="cart_items_details">
                     {% for item in cartItems.values %}
-                        <div class="details" style="margin: 25px; height: 100px;">
-                            <div class="text text_img">
-                                <img src="{{ item.ProductImg }}" alt="" class="item_img" s1tyle="grid-area: a;">
-                            </div>
-                            <div class="text text_det">
-                                <a class="item_name" s1tyle="grid-area: b;">{{ item.Name }}</a>
-                                <a class="item_price" 1style="grid-area: c;">{{ item.price }}</a>
-                                <a class="delete_item" 1style="grid-area: d;">
-                                    <span class="material-symbols-outlined">
-                                        shopping_cart_checkout
-                                    </span>
-                                    <span class="material-symbols-outlined">
-                                        check
-                                    </span>
-                                </a>
-                            </div>
+                    <div class="details">
+                        <div class="text text_img">
+                            <img src="{{ item.ProductImg }}" alt="" class="item_img" s1tyle="grid-area: a;">
                         </div>
-                        <hr >
+                        <div class="text text_det">
+                            <a class="item_name" s1tyle="grid-area: b;">{{ item.Name }}</a>
+                            <a class="item_price" 1style="grid-area: c;">{{ item.price }}</a>
+                            <a class="delete_item" 1style="grid-area: d;">
+                                <span class="material-symbols-outlined">
+                                    shopping_cart_checkout
+                                </span>
+                                <span class="material-symbols-outlined">
+                                    check
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                     {% endfor %}
+                    <div class="item_quentity">
+                        <div class="quentity_ele">
+                            <input type="number">
+                        </div>
+                        <div class="quentity_ele"></div>
+                        <div class="quentity_ele">
+                            <button class="remove" onclick="removeItem()">remove</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             

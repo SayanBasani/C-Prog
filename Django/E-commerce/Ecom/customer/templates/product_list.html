@@ -335,12 +335,14 @@
         
         <div class="productsArange" >
             {%for product in products%}
+            <!-- <h5>{{product}}</h5> -->
             <div class="productDitels">
                 <div class="productImg">
-                    <img src="" alt="" width="200px" height="200px" loading="lazy">
+                    <!-- <a href="{% url 'Seller:sellerUplod' %}?data={{data}}" class="seller_btn  uplod">Uplod</a> -->
+                    <a href="{% url 'homepage:product' %}?id={{product.product_id}}"><img src="{{product.ProductImg}}" alt="" width="200px" height="200px" loading="lazy"></a>
                 </div>
                 <div class="productData">
-                    <div class="productName">{{product.Name}}</div>
+                    <a href="{% url 'homepage:product' %}?id={{product.product_id}}"><div class="productName">{{product.Name}}</div></a>
                     <div class="productPrice">{{product.price}}</div>
                     <div class="productReating">{{product.option}}</div>
                 </div>

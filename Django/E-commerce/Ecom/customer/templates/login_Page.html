@@ -152,8 +152,8 @@
                 {% csrf_token %}
                 <div class="login_elemnt" id="login_1"><p class="login_1_head">Sign in</p></div>
                 <div class="login_elemnt" id="login_2"><p class="login_2_head">Email or login id</p> </div>
-                <div class="login_elemnt" id="login_3"><input type="text" name="email" id="login_email"></div>
-                <div class="login_elemnt" id="login_4"><input type="password" name="password" class="login_password"></div>
+                <div class="login_elemnt" id="login_3"><input type="text" name="email" id="login_email" value="{{c_data.Email}}"></div>
+                <div class="login_elemnt" id="login_4"><input type="password" name="password" class="login_password" value="{{c_data.password}}"></div>
                 <div class="login_elemnt" id="login_5"><button class="submit_button" type="submit">Continue</button></div>
                 <div class="login_elemnt" id="login_7"><p class="policy">By continuing, you agree to Websight's Conditions of Use and <a href="">Privacy Notice</a>.</p></div>
                 <div class="login_elemnt" id="login_6"><a href="">Need help?</a></div>
