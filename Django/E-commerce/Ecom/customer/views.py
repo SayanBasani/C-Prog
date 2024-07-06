@@ -137,37 +137,3 @@ def uplod(path):
     url = storage.child("Images").child('img.png').get_url(firebaseConfig['storageBucket'])
     r_url = str(url)
     return r_url    
-items = {
-    "0": {
-    "option": "Laptop",
-    "network": "5g",
-    "price": "46",
-    "ProductImg": "https://firebasestorage.googleapis.com/v0/b/e-commers-web-page2.appspot.com/o/Laptop%2FLaptopPd4207-0307407522?alt=media&token=e-commers-web-page2.appspot.com",
-    "Name": "456",
-    "product_id": "Pd4207-0307407522",
-    "product_count": 2,
-    "sellerId": "SellSle111s@o"
-  },
-  "1": {
-    "option": "Laptop",
-    "network": "5g",
-    "price": "46",
-    "ProductImg": "https://firebasestorage.googleapis.com/v0/b/e-commers-web-page2.appspot.com/o/Laptop%2FLaptopPda107-0215446409?alt=media&token=e-commers-web-page2.appspot.com",
-    "Name": "a1",
-    "product_id": "Pda107-0215446409",
-    "product_count": 1,
-    "sellerId": "Sells45s."
-  },
-  "2": {
-    "option": "Laptop",
-    "network": "5g",
-    "price": "56456",
-    "ProductImg": "https://firebasestorage.googleapis.com/v0/b/e-commers-web-page2.appspot.com/o/Laptop%2FLaptopPdl107-0307155932?alt=media&token=e-commers-web-page2.appspot.com",
-    "Name": "lap",
-    "product_id": "Pdl107-0307155932",
-    "product_count": 1,
-    "sellerId": "Sells45s."
-  },
-}
-# for i in items:
-#     print(i.Name)
