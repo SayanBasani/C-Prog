@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try home 2</title>
+    <!-- <link rel="stylesheet" href="Try_home2.css">  -->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav1{
+    background-color: rgb(114, 29, 159);
+    display: grid;
+    grid-template-columns: 1fr 6fr 10fr  6fr;
+    /* grid-template-columns: 20px 50px 1fr  100px; */
+    height: 80px;
+    align-items: center;
+    padding: 0px 25px;
+    color: white;
+    border-bottom: 1px solid rgb(93, 9, 138);
+}
+#nav1_1{
+    font-size: 25px;
+    cursor: pointer;
+}
+a {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav1_login{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav1_search{
+    height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.nav1_item a:hover{
+    color: rgb(138, 19, 171);
+    border-radius: 5px;
+    padding: 3px;
+    background-color: rgb(254, 250, 255);
+    border: 3px solid;
+}
+
+/* ------------------ side nav float ----------------- */
+body{
+    font-family: "Lato", sans-serif;
+}
+.sidenav{
+    width: 0;
+    background-color: rgb(122, 21, 176);
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    top: 0;
+    left: 0;
+}
+.sidenav_option{
+    padding: 8px 8px 0px;
+    font-size: 20px;
+    display: block;
+    /* transition: 0.8s; */
+}
+.sidenav .closebutton{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-top: 25px;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+.sidenav a:hover{
+    color: rgb(142, 15, 211);
+}
+#sidenav h2{
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 6px;
+}
+.sidenav-log_out{
+    color: rgb(167, 73, 238);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    background-color: aliceblue;
+    border: 1px solid rgb(155, 145, 145);
+    margin-top: 20px;
+}
+.sidenav_spacings{
+    height: 5px;
+    background-color: rgb(210, 205, 205);
+    box-shadow: 10px 2px 2px rgb(142, 139, 134);
+    margin-top: 5px;
+}
+/* ------------- main options 4 ------------------ */
+.sidenav-main_options{
+    display: grid;
+    grid-template-areas: 
+    '. .'
+    '. .';
+}
+.sidenav-i_options{
+    border: 1px solid rgb(142, 139, 134);
+    margin: 5px;
+    color: rgb(167, 73, 238);
+    background-color: #f1f1f1;
+    padding-left: 6px;
+}
+.sidenav-main_options a{
+    font-size: 20px;
+}
+/* -------------- second nav -------------------- */
+.nav2{
+    display: flex;
+    background-color: rgb(114, 29, 159);
+    height: 35px;
+    justify-content: space-around;
+    /* border: 2px solid rgb(0, 0, 0); */
+
+}
+.nav2_item{
+    align-self: center;
+}
+.nav2_button{
+    background-color: transparent;
+    border-style: hidden;
+    padding: 8px;
+    color: white;
+
+}
+.nav2_button:hover{
+    border: 2px solid white;
+}
+    </style>    
+</head>
+<body>
+    <!-- ---------------main nav -------------------- -->
+    <header class="nav1">
+        <div class="sidenav nav1_item" id="sidenav">
+            <a href="javascript:void(0)" class="closebutton" onclick="closenav()">&times;</a>
+            <h2>Hey! Sayan</h2>
+            <div class="sidenav-main_4">
+                <div class="sidenav-main_options">
+                    <a href="" class="sidenav-i_options sidenav-options-order">Order</a>
+                    <a href="" class="sidenav-i_options sidenav-options-wish">Wishlist</a>
+                    <a href="" class="sidenav-i_options sidenav-options-coupo">Coupons</a>
+                    <a href="" class="sidenav-i_options sidenav-options-help">Help Center</a>
+                </div>
+            </div>
+            <div class="sidenav_spacings"></div>
+            <h2>Account Settings</h2>
+            <a href="" class="sidenav_option">Edit Profile</a>
+            <a href="" class="sidenav_option">Saved Address</a>
+            <div class="sidenav_spacings"></div>
+            <h2>My Actity</h2>
+            <a href="" class="sidenav_option">Reviews</a>
+            <a href="" class="sidenav_option">Questions & Answers</a>
+            <div class="sidenav_spacings"></div>
+            <h2>Earn with Sells</h2>
+            <a href="" class="sidenav_option">Sells Creator Studio</a>
+            <a href="" class="sidenav_option">My Sells</a>
+            <div class="sidenav_spacings"></div>
+            <h2>Feedback & Information</h2>
+            <a href="" class="sidenav_option">Browse FAQs</a>
+            <a href="" class="sidenav_option">Terms, Policies and Licences</a>
+            <a href="" class="sidenav_option sidenav-log_out">Log Out</a>
+        </div>
+        <span onclick="opennav()" class="nav1_item"id="nav1_1">&#9776;</span>
+        <div class="nav1_item" id="nav1_2"><a href="">Home</a></div>
+        <div class="nav1_item" id="nav1_3"><input type="text" class="nav1_search" placeholder="   Search"></div>
+        <div class="nav1_item" id="nav1_4"><a href="" class="nav1_login">Login/Signup</a></div>
+    </header>
+    <!-- ---------------second nav -------------------- -->
+    <div class="nav2">
+        <div class="nav2_item" id="nav2_2"><button class="nav2_button" id="">Catagory</button></div>
+        <div class="nav2_item" id="nav2_3"><button class="nav2_button" id="">Populer</button></div>
+        <div class="nav2_item" id="nav2_1"><button class="nav2_button" id="">Best Sellers</button></div>
+        <div class="nav2_item" id="nav2_4"><button class="nav2_button" id="">Computer</button></div>
+        <div class="nav2_item" id="nav2_5"><button class="nav2_button" id="">Electronics</button></div>
+        <div class="nav2_item" id="nav2_6"><button class="nav2_button" id="">Gift Ideas</button></div>
+    </div>
+</body>
+<script>
+    function closenav() {
+        document.getElementById("sidenav").style.width="0";
+    }
+    function opennav(){
+        document.getElementById('sidenav').style.width="250px";
+    }
+</script>
+</html>

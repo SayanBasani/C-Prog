@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Hind", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+body{
+    background-color: rgb(224, 225, 225);
+}
+div{
+    /* border: 1px solid black; */
+    padding: 1px;
+    margin: 1px;
+}
+.seller_uplode{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 200px 1fr;
+}
+.productCommonDet{
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    padding: 10px;
+    background-color: #fff;
+    gap: 5px;
+}
+.productImg{
+    /* border: 1px solid; */
+    width: 200px;
+    height: 200px;
+}
+.sellerManue{
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 200px;
+}
+.manueOptions{
+    font-size: 1.2em;
+    min-width: 1.7em;
+    padding-left: 10px;
+    margin: 5px;
+}
+.productDet{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+.productInput{
+    border: .1em solid gray;
+    margin: 5px;
+    margin-left: 20px;
+    min-height: 2em;
+    min-width: 50em;
+}
+.productDesc{
+    padding: 5px;
+}
+.others_options_managed{
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    /* border: 2px solid red; */
+}
+.productAboutOptions{
+    width: 30rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 1.5rem;
+}
+.clothes_shows-items{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: .5rem;
+}
+.clothes_shows-items > input {
+    border: .1em solid gray;
+    margin: 5px;
+    margin-left: 20px;
+    min-height: 2em;
+    min-width: 25em;
+    border-radius: 3px;
+}
+.productOptional{
+    margin: 10px;
+}
+.manueOptions:hover{
+    background-color: rgb(218, 210, 210);
+}
+.productAboutOptions{
+    display: none;
+}
+.sellerContents{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.submit{
+    border: 1px solid gray;
+    padding: .5rem;
+    padding-inline: 1rem;
+    background-color: rgb(188, 190, 196);
+    font-weight: bold;
+    border-radius: 5px;
+}

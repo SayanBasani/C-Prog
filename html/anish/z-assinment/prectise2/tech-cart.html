@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tech-cart</title>
+    <!-- <link rel="stylesheet" href="tech-cart.css"> -->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    
+}
+body{
+    background-color: rgb(19, 187, 193);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+.cart{
+    /* border: 3px dotted black; */
+    height: 300px;
+    width: auto;
+    display: flex;
+}
+.items_img,.items{
+    height:350px;
+    width: 350px;
+}
+#head{
+    font-size: 23px;
+}
+#info{
+
+    background-color: rgba(154, 5, 119, 0.97);
+}
+.items_text{
+    padding: 20px;
+    font-size: 22px;
+}
+#intro{
+    font-size: 17px;
+}
+.items_text{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+}
+#analise{
+    display: flex;
+    /* border: 2px solid white; */
+}
+.ana{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 2px solid blueviolet; */
+    width: 80px;
+    height: 80px;
+}
+.k{
+    font: bold 27px/1 sans-serif;
+    font-family: "Abril Fatface", serif;
+}
+.anaa{
+    /* border: 2px solid ; */
+    /* padding-left: 25px; */
+    /* padding-right: px; */
+}
+#com{
+    font-size: 13px;
+}    
+    </style>
+</head>
+<body>
+    <div class="cart">
+        <div class="items" id="info">
+            <div class="items_text" id="head"><h3>Get insights that help your business grow</h3></div>
+            <div class="items_text" id="intro">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure autem dolorem nam, ratione, natus earum sequi blanditiis fuga id suscipit laboriosam!</p>
+            </div>
+            <div class="items_text" id="analise">
+                <div class="ana">
+                    <div class="anaa" id="no_comment"><p class="k">10K+</p></div>
+                    <div class="anaa" id="com"><p>Comment</p></div>
+                </div>
+                <div class="ana">
+                    
+                    <div class="anaa" id="no_comment"><p class="k">214</p></div>
+                    <div class="anaa" id="com"><p>Paid User</p></div>
+                </div>
+                <div class="ana">
+                    
+                    <div class="anaa" id="no_comment"><p class="k">12M+</p></div>
+                    <div class="anaa" id="com"><p>views</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="items" id="img"><img class="items_img" src="razorpay.avif" alt=""></div>
+    </div>
+</body>
+</html>

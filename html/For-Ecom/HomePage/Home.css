@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div{
+    border: 1px solid black;
+    margin: 1px;
+    padding: 1px;
+}
+.ContentOfHome{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    background-color: blueviolet;
+    
+}

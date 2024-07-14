@@ -1,0 +1,171 @@
+body{
+    /* background: #847979; */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.hedder{
+    text-shadow: rgb(70, 68, 58) 1px 0 10px;;
+}
+.element{
+    /* border: 1px solid; */
+    /* width: 100px; */
+    /* height: 100px; */
+    flex-wrap: nowrap;
+}
+#main1{
+    font-size: 30px;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+#main2{
+    width: 800px;
+    /* flex-basis: 130px; */
+    padding: 20px;
+    height: auto;
+}
+#main3{
+    width: 1280px;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2.5em;
+    border: 3px solid black;
+    padding: 20px ;
+}
+.cart{
+    border: 1px solid rgb(107, 105, 105);
+    border-radius: 8px;
+    width: 275px;
+    height: 325px;
+    flex-basis: 275px;
+    background-image: radial-gradient(circle, rgba(144, 238, 144, 0.647), rgba(173, 216, 230, 0.576));
+}
+.main-img{
+    width: 274px;
+    height: 200px;
+    border-radius: 10px;
+    /* ---- copy ------- */
+    transition: all 0.5s ease;
+    /* border: 2px dotted; */
+}
+#info{
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titel{
+    /* border: 2px dotted white ; */
+    font-size: 14px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Copperplate, Papyrus, fantasy;
+    width: 200px;
+    height: 25px;
+}
+.discreption{
+    /* border: 2px dotted white ; */
+    padding-top: 10px;
+    width: 200px;
+    height: 40px;
+    font-variant: small-caps;
+    font-size: 13px;
+}
+#wonner{
+    /* border: 2px dotted blue; */
+    padding-top: 10px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    /* width: 200px; */
+}
+.intro{
+    display: flex;
+    align-items: center;
+    /* border: 2px dotted blue; */
+    width: 200px;
+}
+.author_avatar{
+    border-radius: 100px;
+    height: 30px;
+    border: 2px dotted ;
+}
+.name , .date{
+    padding-left: 20px;
+    /* border: 2px solid black; */
+}
+.name{
+    font-size: 9px;
+    /* background-color: aqua; */
+    /* transition: all 0.5s ease; */
+}
+h1{
+    /* background-color: rgb(5, 150, 102); */
+    /* tra */
+    text-shadow: #6b6868;
+}
+.cart-items{
+    overflow: hidden;
+}
+/* ----------------- sudo css ------------------- */
+.titel :hover{
+    color:red;
+    transform: scale(1.2);
+}
+/* ---------------------------- gpt vi gpt ----------------------------- */
+.intro:hover .author_avatar,
+.intro:hover h1 {
+    transform: scale(1.05);
+    text-shadow: 0px 0px 5px #6b6868;
+}
+.main-img:hover{
+    transform: scale(1.04);
+}
+/* .name:hover {
+    transform: scale(1.2);
+} */
+
+.name {
+    font-size: 9px;
+    /* background-color: aqua; */
+    transition: transform 0.5s ease; /* Add transition for smooth effect */
+}
+
+/* .name:hover {
+    transform: scale(1.2);
+} */
+
+.name:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    opacity: 0.5; /* Adjust the opacity as needed */
+    z-index: -1;
+}
+
+.name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    /* background-image: radial-gradient(circle, rgba(144, 238, 144, 0.647), rgba(173, 216, 230, 0.576)); */
+    z-index: -1;
+    transition: transform 0.5s ease; /* Add transition for smooth effect */
+}

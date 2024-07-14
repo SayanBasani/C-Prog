@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="serch_options">
+            <div class="serch_option sortBy">
+                <h3>Sort By</h3>
+                <!-- sort options  -->
+                <input type="text" class="onclickSortBy_ops-input" hidden>
+                <select class="onclickSortBy">
+                    <option class="onclickSortBy_ops">Relevance</option>
+                    <option class="onclickSortBy_ops">Popularity</option>
+                    <option class="onclickSortBy_ops">Price -- Low to High</option>
+                    <option class="onclickSortBy_ops">Price -- High to Low</option>
+                    <option class="onclickSortBy_ops">Newest First</option>
+                </select>
+            </div>
+
+            <div class="serch_option filter">
+                <h3 class="filterOptions_h3">Filter</h3>
+
+                <div class="filterOptions">
+                    <!-- color,brand,size,faeric,desine,paterns,type,model , for whom ,waight -->
+                    <div class="filterOption">
+                        <h3 class="FO_H">brand</h3>
+                        <div class="FO_ fo">
+                            <div><input type="checkbox" class="cbox" name="" id=""> 4000 mah</div>
+                        </div>
+                    </div>
+                    <div class="filterOption">
+                        <h3 class="FO_H">brand</h3>
+                        <div class="FO_ fo">
+                            <div><input type="checkbox" class="cbox" name="" id=""> 4000 mah</div>
+                        </div>
+                    </div>
+                    <div class="filterOption">
+                        <h3 class="FO_H">brand</h3>
+                        <div class="FO_ fo">
+                            <div><input type="checkbox" class="cbox" name="" id=""> 4000 mah</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+    <div class="productsArange">
+        <div class="productDitels">
+            <div class="productImg">
+                <img src="" alt="" width="200px" height="200px" loading="lazy">
+            </div>
+            <div class="productData">
+                <div class="productName">{{product.Name}}</div>
+                <div class="productPrice">{{product.price}}</div>
+                <div class="productReating">{{product.option}}</div>
+            </div>
+        </div>
+        
+    </div>  
+<script>
+    sortby=document.querySelector('.onclickSortBy')
+    sortby.style.backgroundColor='red'
+    sortby.addEventListener("change" , ()=>{
+        carrentState=sortby.value
+        console.log(carrentState)
+        if(carrentState === "Price -- Low to High"){
+            console.log("ok")
+            allEleDelete()
+
+        }
+    })
+    function allEleDelete(){
+        productDitels=document.querySelector('.productDitels')
+        productDitels.style.display="none"
+    }
+
+
+
+
+
+
+
+
+    filterOptions_h3 = document.querySelector(".filterOptions_h3");
+    filterOption = document.querySelectorAll(".filterOption");
+    filterOptions_h3.addEventListener('click',()=>{
+        filterOption.forEach(element => {
+            console.log(element.style.display);
+            if(element.style.display== ""){
+                element.style.display="none";
+            }
+            else{
+                element.style.display="";
+            }
+        });
+    });
+
+    onclickSortBy_ops_input = document.querySelector('.onclickSortBy');
+    onclickSortBy_ops_input.addEventListener("click",()=>{
+        let inputval=onclickSortBy_ops_input.value
+        document.querySelector(".onclickSortBy_ops-input").value=inputval
+    });
+    </script>
+</body>
+</html>

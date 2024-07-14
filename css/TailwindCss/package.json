@@ -1,0 +1,20 @@
+{
+  "name": "tailwindcss",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./scr/input.css -o ./dist/style.css --watch",
+    "update-browserslist": "npx update-browserslist-db@latest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "description": "",
+  "dependencies": {
+    "browserslist": "^4.23.0",
+    "caniuse-lite": "^1.0.30001620"
+  }
+}

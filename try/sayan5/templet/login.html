@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* background-color: crimson */
+            background-image: linear-gradient(rgb(237, 36, 36), rgb(165, 165, 37),rgb(26, 137, 57));
+            /* height: 500; */
+        }
+        input,select{
+            background-image: linear-gradient(red,aqua);
+        }
+        .fill{
+            text-align: center;
+            font-size: 40px;
+        }
+        .back{
+            width: 100px;
+        }
+        .logo{
+            height: 40px;
+            width: 40px;
+            border-radius: 40%
+        }
+    </style>
+</head>
+<body>
+    <p>HELLO WORLD</p>
+    <div>
+        <p>This page is for test work of my perfaction .i think very low .let's try</p>
+        <p><b>Form for my company</b></p>
+    </div>
+    <div>
+        <p class="fill"><i>fill it</i></p>
+        <center>
+            <!-- {% csrf_token %}
+        <form action="" method="GET">
+            <div>
+                <p>Your name :- <input id="name" name="uName" type="text"></p>
+                <p>age :- <input type="date" name="uAge" id="">  Sax:- <select name="uSax" id=""><option value=""> male</option><option value="">female</option><option value="">others</option></select></p>
+                <p>Mobile No :- <input type="number" name="uMobNo" id=""></p>
+                <p>gmail :- <input type="email" name="uGmail" id=""></p>
+                <p>Enter Your CV :- <input type="file" name="uCV" id=""></p>
+                <p>password :- <input type="password" name="uPass" id=""></p>
+                <p><input type="submit" value="submit"></p>
+            </div>
+        </form> -->
+            <div>
+                    {% csrf_token %}
+                <form action="" method="GET">
+                    <!-- <label for="name">name :- </label> -->
+                    <P>Name :- <input type="text" name="name"></P>
+                    <p>password :- <input type="password" name="pass" id=""></P>
+                    <p><input type="submit" value="ok"></P>
+                </form>
+            </div>
+    </center>
+    </div>
+    <p><a href="Home.html"><img class="logo" src="home.jpg" alt=""></a></p>  <p></p><a href="info.html"><img class="back" src="info.jpg" alt="" style="border-radius: 20%; zoom: 100%;"></a></p>
+</body>
+</html>

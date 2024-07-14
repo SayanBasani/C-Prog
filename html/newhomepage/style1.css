@@ -1,0 +1,60 @@
+div{
+    border: 1px solid black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.homecontent{
+    width: 100%;
+}
+.header{
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    padding-inline: 2%;
+    height: 3rem;
+    background-color: rgb(216, 210, 218);
+    /* background-color: rgb(169, 105, 203); */
+}
+.searchInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.serchInputFuild{
+    height: 2rem;
+    width: 45%;
+    border-radius: 30px 0px 0px 30px;
+    border-right: 0px;
+}
+.serchInputFuildSubmit{
+    display: flex;
+    height: 2rem;
+    border-radius: 0px 30px 30px 0px;
+    border-left: 0px;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.serchInputFuildSubmit_span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.material-symbols-outlined{
+    font-size: 200%;
+}
+input{
+    border: 0px solid ;
+    margin: 1px;
+}
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}

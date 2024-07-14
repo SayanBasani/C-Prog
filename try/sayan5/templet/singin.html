@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        body{
+            /* background-color: crimson */
+            background-image: linear-gradient(rgb(237, 36, 36), rgb(165, 165, 37),rgb(26, 137, 57));
+            /* height: 500; */
+        }
+        input,select{
+            background-image: linear-gradient(red,aqua);
+        }
+        .fill{
+            text-align: center;
+            font-size: 40px;
+        }
+        .back{
+            width: 100px;
+        }
+        .logo{
+            height: 40px;
+            width: 40px;
+            border-radius: 40%
+        }
+    </style> -->
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- <label for="name">name :- </label> -->
+        <!-- <P>Name :- <input type="text" name="name"></P> -->
+        <p>email :- <input type="email" name="email" id=""></p>
+        <p>password :- <input type="password" name="pass" id=""></P>
+        <p><input type="submit" value="ok"></P>
+    </form>
+</body>
+</html>

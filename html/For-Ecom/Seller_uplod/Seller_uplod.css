@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+input , select{
+    border-style: none;
+}
+input{
+    padding-left: 16px;
+}
+div{
+    /* border: 2px solid black; */
+    padding: 2px;
+    margin: 2px;
+}
+.uplod_text{
+    text-align: center;
+    font-size: 30px;
+}
+.product_uplod{
+    min-height: 300px;
+}
+.product_uplod{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(214, 229, 252);
+    padding: 30px;
+}
+.main-uplod_content{
+    width: 70%;
+}
+.product-img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product-imgs{
+    width: 100px;
+    height: 100px;
+    margin: 12px;
+    border: 1px solid grey;
+}
+.product-discreption{
+    padding: 5px;
+    padding-inline: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    padding-right: 35px;
+}
+.product-name_input , .product-descrb_input{
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 7px;
+    min-height: 35px;
+}
+#other,select{
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.clothes_shows,.toys,.Mobile_laptop,.Gagets{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.clothes_shows_input{
+    width: 250px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 7px;
+    min-height: 35px;   
+}
+.clothes_shows > div {
+    background-color: rgb(229, 239, 253);
+    border-radius: 5px;
+}
+/* .others-options_managed{
+    display: none;
+} */

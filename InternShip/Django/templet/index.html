@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            text-align: center;
+        }
+        h1{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Bat Ball Stump Game</h1>
+        <div class="button">
+            <button onclick="
+                console.log('you choose bat');
+                let bo=Math.random()*3;
+                if(bo<1){
+                    alert('tie');
+                } else if(bo<2){
+                    alert('you win');
+                } else if(bo<3){
+                    alert('Bot win');
+                }else{
+                    alert('Nothing Happne');
+                }
+                ">Bat</button>
+
+            <button onclick="
+            console.log('you choose Ball');
+            let bot=Math.random()*3;
+            if(bot<1){
+                alert(' Bot win');
+            } else if(bot<2){
+                alert(' tie ');
+            } else if(bot<3){
+                alert('you win');
+            }else{
+                alert('Nothing Happne');
+            }
+            ">Ball</button>
+            <button onclick="
+            console.log('you choose Stump');
+            let b=Math.random()*3;
+            if(b<1){
+                alert('you win');
+            } else if(b<2){
+                alert(' Bot win ');
+            } else if(b<3){
+                alert('tie ');
+            }else{
+                alert('Nothing Happne');
+            }
+            ">Stump</button>
+        </div>
+    </div>
+</body>
+</html>
